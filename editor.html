@@ -35,6 +35,30 @@
   #toolbar button.primary { background: var(--frame); color: #fff; }
   #save-status { color: var(--ink-soft); font-size: 12px; margin-left: auto; }
 
+  /* ---------- 사용법 ---------- */
+  #help {
+    display: none;
+    background: var(--bg);
+    border-bottom: 2px solid var(--frame);
+    padding: 12px 18px;
+    font-size: 13px; line-height: 1.8;
+    columns: 2; column-gap: 40px;
+  }
+  #help.open { display: block; }
+  #help b { color: var(--frame); }
+  #help .k {
+    display: inline-block; background: var(--panel-dark);
+    padding: 0 6px; font-size: 12px; border: 1px solid var(--ornament);
+  }
+
+  /* ---------- 링크 모드 안내 ---------- */
+  #link-banner {
+    display: none;
+    background: var(--ember); color: #fff;
+    text-align: center; font-size: 13px; padding: 5px;
+  }
+  #link-banner.on { display: block; }
+
   /* ---------- 본문 ---------- */
   #main { flex: 1; display: flex; min-height: 0; }
   #canvas-wrap { flex: 1; overflow: auto; position: relative; }
@@ -46,13 +70,18 @@
     width: 230px;
     background: var(--panel);
     border: 2px solid var(--panel-dark);
-    cursor: pointer;
+    cursor: grab;
     padding: 8px 10px;
+    user-select: none;
+    touch-action: none;
   }
   .node-card:hover { border-color: var(--ornament); }
   .node-card.selected { border-color: var(--frame); box-shadow: 0 0 0 2px var(--ornament); }
   .node-card.orphan { border-style: dashed; }
-  .node-card .nid { font-weight: bold; font-size: 13px; }
+  .node-card.dragging { opacity: .75; cursor: grabbing; z-index: 5; }
+  body.linking .node-card { cursor: crosshair; }
+  body.linking .node-card.link-source { border-color: var(--ember); box-shadow: 0 0 0 2px var(--ember); }
+  .node-card .nid { font-weight: bold; font-size: 13px; padding-right: 26px; }
   .node-card .nid .flag { font-weight: normal; font-size: 11px; color: var(--ember); }
   .node-card .snippet { color: var(--ink-soft); font-size: 12px; margin: 4px 0; line-height: 1.4; }
   .node-card .ch {
@@ -63,6 +92,14 @@
   }
   .node-card .ch .tag { font-weight: bold; }
   .node-card .ch .bad { color: var(--red); font-weight: bold; }
+  .link-btn {
+    position: absolute; top: 4px; right: 4px;
+    width: 22px; height: 22px;
+    font-size: 13px; line-height: 1;
+    background: var(--bg); color: var(--ember);
+    border: 1px solid var(--ember); cursor: pointer;
+  }
+  .link-btn:hover { background: var(--ember); color: #fff; }
 
   /* ---------- 인스펙터 ---------- */
   #inspector {
@@ -73,7 +110,7 @@
     padding: 12px;
   }
   #inspector h2 { font-size: 15px; margin-bottom: 8px; }
-  #inspector .hint { color: var(--ink-soft); font-size: 12px; }
+  #inspector .hint { color: var(--ink-soft); font-size: 12px; line-height: 1.7; }
   #inspector label { display: block; font-size: 12px; color: var(--ink-soft); margin: 10px 0 3px; }
   #inspector textarea, #inspector input, #inspector select {
     width: 100%; font-family: inherit; font-size: 13px;
@@ -105,20 +142,32 @@
 
 <div id="toolbar">
   <b>스토리 트리 에디터</b>
+  <button id="bt-help">사용법 ▾</button>
   <button class="primary" id="bt-test">게임에서 테스트</button>
   <button id="bt-add">+ 새 노드</button>
+  <button id="bt-layout">자동 정렬</button>
   <button id="bt-export-js">story.js 내보내기</button>
   <button id="bt-export-json">story.json 내보내기</button>
   <button id="bt-discard">초안 버리기</button>
   <span id="save-status"></span>
 </div>
+
+<div id="help">
+  <div><b>보기</b> — 노드가 깊이순으로 배치됩니다. 초록 실선 = 성공/진행, 빨간 점선 = 실패 분기. 점선 테두리 카드 = 어디서도 연결되지 않은 노드. 빨간 <span class="k">→id ?</span> = 없는 노드를 가리키는 중.</div>
+  <div><b>편집</b> — 카드를 <span class="k">클릭</span>하면 오른쪽에서 본문·선택지·판정·비용·보상을 편집합니다. 모든 편집은 이 브라우저에 초안으로 자동 저장됩니다.</div>
+  <div><b>이동</b> — 카드를 <span class="k">드래그</span>해 원하는 위치에 놓으면 그 위치가 저장됩니다. <span class="k">자동 정렬</span>을 누르면 수동 위치를 지우고 깊이순으로 재배치합니다.</div>
+  <div><b>연결</b> — 카드 우상단 <span class="k">⚯</span>를 누른 뒤 대상 카드를 클릭하면 "출발 노드 → 대상 노드" 선택지가 새로 생깁니다. <span class="k">Esc</span>로 취소. 기존 선택지의 이동처는 인스펙터에서 바꿉니다.</div>
+  <div><b>테스트</b> — <span class="k">게임에서 테스트</span>는 초안을 적용한 게임을 새 창에 엽니다(공개판에는 영향 없음).</div>
+  <div><b>확정</b> — <span class="k">story.js 내보내기</span> + <span class="k">story.json 내보내기</span>로 파일을 받아 저장소의 web/story.js와 Unity의 Assets/Resources/story.json을 교체하면 실제 게임에 반영됩니다. (Claude에게 "초안 확정해서 배포해줘"라고 해도 됩니다)</div>
+</div>
+
+<div id="link-banner">연결 모드: 대상 노드를 클릭하세요 (Esc 취소)</div>
+
 <div id="main">
   <div id="canvas-wrap"><div id="canvas"><svg id="edges"></svg></div></div>
   <div id="inspector"><h2>노드를 선택하세요</h2>
     <p class="hint">왼쪽 트리에서 카드를 클릭하면 여기서 본문과 선택지를 편집할 수 있습니다.<br><br>
-    · 편집 내용은 이 브라우저에 자동 저장(초안)되고, [게임에서 테스트]로 바로 플레이해 볼 수 있습니다.<br>
-    · 확정되면 [story.js 내보내기]로 파일을 받아 저장소의 story.js를 교체하세요.<br>
-    · 초록 실선 = 성공/진행, 빨간 점선 = 실패 분기.</p>
+    처음이라면 툴바의 [사용법 ▾]을 눌러보세요.</p>
   </div>
 </div>
 <datalist id="node-ids"></datalist>
@@ -132,9 +181,11 @@ const CHECK_COLOR = { grit: 'var(--red)', agi: 'var(--blue)', mem: 'var(--purple
 const DELTA_KEYS = ['hp', 'gold', 'ember', 'grit', 'agi', 'mem', 'dist', 'distset'];
 const DELTA_LABEL = { hp: '생명', gold: '금화', ember: '불씨', grit: '담력', agi: '민첩', mem: '기억', dist: '거리±', distset: '거리=' };
 
-let story;           // { nodes: [...] }
+let story;
 let selectedId = null;
 let usingDraft = false;
+let linkSourceId = null; // 연결 모드 출발 노드
+let lastPos = {};        // 마지막 레이아웃 (드래그 중 간선 갱신용)
 
 (function load() {
   try {
@@ -162,8 +213,11 @@ let treeTimer = null;
 function scheduleTree() { clearTimeout(treeTimer); treeTimer = setTimeout(renderTree, 350); }
 function setStatus(t) { document.getElementById('save-status').textContent = t; }
 
-/* ---------- 트리 렌더 ---------- */
+/* ---------- 레이아웃 ---------- */
+function cardHeight(n) { return 62 + 20 * Math.min(n.choices.length, 4) + 16; }
+
 function layout() {
+  // 자동 배치(BFS 깊이 컬럼) — 수동 위치(n.x/n.y)가 있으면 그대로 사용
   const depth = {};
   const queue = [];
   if (byId('intro')) { depth.intro = 0; queue.push('intro'); }
@@ -183,37 +237,41 @@ function layout() {
   const colY = {};
   const pos = {};
   for (const n of story.nodes) {
-    const d = depth[n.id] === undefined ? orphanCol : depth[n.id];
-    colY[d] = colY[d] || 20;
-    const h = 62 + 20 * Math.min(n.choices.length, 4) + 16;
-    pos[n.id] = { x: 20 + d * 280, y: colY[d], h, orphan: depth[n.id] === undefined };
-    colY[d] += h + 18;
+    const h = cardHeight(n);
+    const orphan = depth[n.id] === undefined;
+    if (typeof n.x === 'number' && typeof n.y === 'number') {
+      pos[n.id] = { x: n.x, y: n.y, h, orphan };
+    } else {
+      const d = orphan ? orphanCol : depth[n.id];
+      colY[d] = colY[d] || 20;
+      pos[n.id] = { x: 20 + d * 280, y: colY[d], h, orphan };
+      colY[d] += h + 18;
+    }
   }
-  let w = 20 + (orphanCol + 1) * 280 + 40;
-  let h = 40;
-  for (const k in colY) h = Math.max(h, colY[k]);
-  return { pos, w, h: h + 40 };
+  let w = 400, h = 200;
+  for (const id in pos) { w = Math.max(w, pos[id].x + 300); h = Math.max(h, pos[id].y + pos[id].h + 40); }
+  return { pos, w, h };
 }
 
+/* ---------- 트리 렌더 ---------- */
 function renderTree() {
   const { pos, w, h } = layout();
+  lastPos = pos;
   const canvas = document.getElementById('canvas');
   canvas.style.width = w + 'px';
   canvas.style.height = h + 'px';
   canvas.querySelectorAll('.node-card').forEach(e => e.remove());
-  const svg = document.getElementById('edges');
-  svg.setAttribute('width', w);
-  svg.setAttribute('height', h);
-  svg.innerHTML = '';
 
   const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
   for (const n of story.nodes) {
     const p = pos[n.id];
     const card = document.createElement('div');
-    card.className = 'node-card' + (n.id === selectedId ? ' selected' : '') + (p.orphan ? ' orphan' : '');
+    card.className = 'node-card' + (n.id === selectedId ? ' selected' : '') + (p.orphan ? ' orphan' : '')
+      + (n.id === linkSourceId ? ' link-source' : '');
     card.style.left = p.x + 'px';
     card.style.top = p.y + 'px';
-    let html = `<div class="nid">${esc(n.id)}${n.ending ? ' <span class="flag">■결말</span>' : ''}${p.orphan && n.id !== 'forgotten' ? ' <span class="flag" style="color:var(--red)">연결 안 됨</span>' : ''}</div>`;
+    let html = `<button class="link-btn" title="이 노드에서 다른 노드로 연결">⚯</button>`;
+    html += `<div class="nid">${esc(n.id)}${n.ending ? ' <span class="flag">■결말</span>' : ''}${p.orphan && n.id !== 'forgotten' ? ' <span class="flag" style="color:var(--red)">연결 안 됨</span>' : ''}</div>`;
     html += `<div class="snippet">${esc(n.text.slice(0, 42))}…</div>`;
     n.choices.slice(0, 4).forEach(c => {
       const okS = !!byId(c.s), okF = !c.f || !!byId(c.f);
@@ -221,13 +279,27 @@ function renderTree() {
     });
     if (n.choices.length > 4) html += `<div class="ch">…선택지 ${n.choices.length}개</div>`;
     card.innerHTML = html;
-    card.addEventListener('click', () => { selectedId = n.id; renderTree(); renderInspector(); });
-    canvas.appendChild(card);
 
-    // 간선
+    card.querySelector('.link-btn').addEventListener('click', e => {
+      e.stopPropagation();
+      startLink(n.id);
+    });
+    card.addEventListener('pointerdown', e => onCardPointerDown(e, n, card));
+    canvas.appendChild(card);
+  }
+  drawEdges(pos, w, h);
+}
+
+function drawEdges(pos, w, h) {
+  const svg = document.getElementById('edges');
+  if (w) { svg.setAttribute('width', w); svg.setAttribute('height', h); }
+  svg.innerHTML = '';
+  for (const n of story.nodes) {
+    const p = pos[n.id];
+    if (!p) continue;
     n.choices.forEach((c, ci) => {
-      const y0 = p.y + 52 + ci * 14;
-      drawEdge(svg, p.x + 230, Math.min(y0, p.y + p.h - 10), c.s, pos, false);
+      const y0 = Math.min(p.y + 52 + ci * 14, p.y + p.h - 10);
+      drawEdge(svg, p.x + 230, y0, c.s, pos, false);
       if (c.f && c.f !== c.s) drawEdge(svg, p.x + 230, Math.min(y0 + 5, p.y + p.h - 6), c.f, pos, true);
     });
   }
@@ -247,6 +319,83 @@ function drawEdge(svg, x0, y0, targetId, pos, isFail) {
   if (isFail) path.setAttribute('stroke-dasharray', '5 4');
   svg.appendChild(path);
 }
+
+/* ---------- 드래그 이동 / 클릭 선택 / 연결 대상 지정 ---------- */
+function onCardPointerDown(e, n, card) {
+  if (e.button !== 0) return;
+  // 연결 모드: 클릭 = 대상 지정
+  if (linkSourceId) {
+    e.preventDefault();
+    finishLink(n.id);
+    return;
+  }
+  const startX = e.clientX, startY = e.clientY;
+  const origX = lastPos[n.id].x, origY = lastPos[n.id].y;
+  let dragging = false;
+  try { card.setPointerCapture(e.pointerId); } catch (err) {}
+
+  const onMove = ev => {
+    const dx = ev.clientX - startX, dy = ev.clientY - startY;
+    if (!dragging && Math.abs(dx) + Math.abs(dy) > 6) {
+      dragging = true;
+      card.classList.add('dragging');
+    }
+    if (dragging) {
+      const nx = Math.max(0, Math.round((origX + dx) / 10) * 10);
+      const ny = Math.max(0, Math.round((origY + dy) / 10) * 10);
+      lastPos[n.id].x = nx;
+      lastPos[n.id].y = ny;
+      card.style.left = nx + 'px';
+      card.style.top = ny + 'px';
+      requestAnimationFrame(() => drawEdges(lastPos));
+    }
+  };
+  const onUp = () => {
+    card.removeEventListener('pointermove', onMove);
+    card.removeEventListener('pointerup', onUp);
+    card.removeEventListener('pointercancel', onUp);
+    card.classList.remove('dragging');
+    if (dragging) {
+      n.x = lastPos[n.id].x;
+      n.y = lastPos[n.id].y;
+      markDirty(true); // 위치 저장 (트리 전체 재렌더 불필요)
+    } else {
+      selectedId = n.id;
+      renderTree();
+      renderInspector();
+    }
+  };
+  card.addEventListener('pointermove', onMove);
+  card.addEventListener('pointerup', onUp);
+  card.addEventListener('pointercancel', onUp);
+}
+
+/* ---------- 연결 모드 ---------- */
+function startLink(id) {
+  linkSourceId = id;
+  document.body.classList.add('linking');
+  document.getElementById('link-banner').classList.add('on');
+  document.getElementById('link-banner').textContent = `연결 모드: '${id}' 에서 이어질 대상 노드를 클릭하세요 (Esc 취소)`;
+  renderTree();
+}
+function cancelLink() {
+  linkSourceId = null;
+  document.body.classList.remove('linking');
+  document.getElementById('link-banner').classList.remove('on');
+  renderTree();
+}
+function finishLink(targetId) {
+  const src = byId(linkSourceId);
+  if (src && targetId !== linkSourceId) {
+    src.choices.push({ t: '새 선택지', check: '', s: targetId, f: targetId, sd: { distset: -1 }, fd: { distset: -1 }, cost: 0, ecost: 0 });
+    selectedId = src.id;
+    markDirty();
+    renderInspector();
+    setStatus(`연결 생성: ${src.id} → ${targetId}`);
+  }
+  cancelLink();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && linkSourceId) cancelLink(); });
 
 /* ---------- 인스펙터 ---------- */
 function refreshIdList() {
@@ -326,11 +475,9 @@ function choiceEditor(n, c, i) {
   head.appendChild(rm);
   wrap.appendChild(head);
 
-  const field = (label, value, onInput, attrs = {}) => {
+  const field = (label, value, onInput) => {
     wrap.insertAdjacentHTML('beforeend', `<label>${label}</label>`);
-    const inp = document.createElement(attrs.tag || 'input');
-    if (attrs.list) inp.setAttribute('list', attrs.list);
-    if (attrs.type) inp.type = attrs.type;
+    const inp = document.createElement('input');
     inp.value = value;
     inp.addEventListener('input', () => onInput(inp.value));
     wrap.appendChild(inp);
@@ -420,6 +567,12 @@ function deltaEditor(label, c, key) {
 }
 
 /* ---------- 툴바 ---------- */
+document.getElementById('bt-help').addEventListener('click', () => {
+  const h = document.getElementById('help');
+  h.classList.toggle('open');
+  document.getElementById('bt-help').textContent = h.classList.contains('open') ? '사용법 ▴' : '사용법 ▾';
+});
+
 document.getElementById('bt-test').addEventListener('click', () => {
   clearTimeout(saveTimer);
   localStorage.setItem(DRAFT_KEY, JSON.stringify(story));
@@ -431,10 +584,22 @@ document.getElementById('bt-add').addEventListener('click', () => {
   const id = prompt('새 노드 id (영문/숫자/_ 권장):');
   if (!id) return;
   if (byId(id)) { alert('이미 있는 id입니다: ' + id); return; }
-  story.nodes.push({ id, text: '새 노드 본문', ending: false, choices: [] });
+  // 현재 보이는 화면 중앙 부근에 생성
+  const wrap = document.getElementById('canvas-wrap');
+  story.nodes.push({
+    id, text: '새 노드 본문', ending: false, choices: [],
+    x: Math.round((wrap.scrollLeft + 80) / 10) * 10,
+    y: Math.round((wrap.scrollTop + 80) / 10) * 10
+  });
   selectedId = id;
   markDirty();
   renderInspector();
+});
+
+document.getElementById('bt-layout').addEventListener('click', () => {
+  if (!confirm('모든 노드의 수동 위치를 지우고 깊이순으로 자동 정렬할까요?')) return;
+  story.nodes.forEach(n => { delete n.x; delete n.y; });
+  markDirty();
 });
 
 function download(name, content) {
@@ -451,7 +616,7 @@ document.getElementById('bt-export-json').addEventListener('click', () => {
   download('story.json', JSON.stringify(story, null, 1));
 });
 document.getElementById('bt-discard').addEventListener('click', () => {
-  if (!confirm('초안을 버리고 story.js 원본으로 되돌릴까요?')) return;
+  if (!confirm('초안을 버리고 story.js 원본으로 되돌릴까요? (노드 위치 포함)')) return;
   localStorage.removeItem(DRAFT_KEY);
   location.reload();
 });
