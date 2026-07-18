@@ -1,0 +1,460 @@
+<meta charset="utf-8">
+<title>잊힘의 안개 — 스토리 트리 에디터</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #D9D0BE; --panel: #E6DECC; --panel-dark: #C9BFA8;
+    --ink: #3A3128; --ink-soft: #6B5F4E; --ornament: #A08A5F; --frame: #57493A;
+    --red: #B03A48; --blue: #4E7FA8; --purple: #8A5FA0;
+    --gold: #C08A2E; --green: #5F8F4E; --ember: #7E6BAF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: 'Malgun Gothic', sans-serif;
+    background: var(--bg); color: var(--ink);
+    display: flex; flex-direction: column;
+    font-size: 14px;
+  }
+
+  /* ---------- 툴바 ---------- */
+  #toolbar {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 12px;
+    background: var(--panel); border-bottom: 2px solid var(--frame);
+    flex-wrap: wrap;
+  }
+  #toolbar b { margin-right: 8px; }
+  #toolbar button {
+    font-family: inherit; font-size: 13px;
+    padding: 6px 12px;
+    background: var(--bg); color: var(--ink);
+    border: 1px solid var(--frame); cursor: pointer;
+  }
+  #toolbar button:hover { background: var(--panel-dark); }
+  #toolbar button.primary { background: var(--frame); color: #fff; }
+  #save-status { color: var(--ink-soft); font-size: 12px; margin-left: auto; }
+
+  /* ---------- 본문 ---------- */
+  #main { flex: 1; display: flex; min-height: 0; }
+  #canvas-wrap { flex: 1; overflow: auto; position: relative; }
+  #canvas { position: relative; }
+  #edges { position: absolute; top: 0; left: 0; pointer-events: none; }
+
+  .node-card {
+    position: absolute;
+    width: 230px;
+    background: var(--panel);
+    border: 2px solid var(--panel-dark);
+    cursor: pointer;
+    padding: 8px 10px;
+  }
+  .node-card:hover { border-color: var(--ornament); }
+  .node-card.selected { border-color: var(--frame); box-shadow: 0 0 0 2px var(--ornament); }
+  .node-card.orphan { border-style: dashed; }
+  .node-card .nid { font-weight: bold; font-size: 13px; }
+  .node-card .nid .flag { font-weight: normal; font-size: 11px; color: var(--ember); }
+  .node-card .snippet { color: var(--ink-soft); font-size: 12px; margin: 4px 0; line-height: 1.4; }
+  .node-card .ch {
+    font-size: 11px; line-height: 1.5;
+    border-top: 1px dotted var(--panel-dark);
+    padding: 2px 0;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .node-card .ch .tag { font-weight: bold; }
+  .node-card .ch .bad { color: var(--red); font-weight: bold; }
+
+  /* ---------- 인스펙터 ---------- */
+  #inspector {
+    width: 400px; min-width: 400px;
+    border-left: 2px solid var(--frame);
+    background: var(--panel);
+    overflow-y: auto;
+    padding: 12px;
+  }
+  #inspector h2 { font-size: 15px; margin-bottom: 8px; }
+  #inspector .hint { color: var(--ink-soft); font-size: 12px; }
+  #inspector label { display: block; font-size: 12px; color: var(--ink-soft); margin: 10px 0 3px; }
+  #inspector textarea, #inspector input, #inspector select {
+    width: 100%; font-family: inherit; font-size: 13px;
+    padding: 5px 7px;
+    border: 1px solid var(--panel-dark); background: #fff;
+    color: var(--ink);
+  }
+  #inspector textarea { min-height: 130px; line-height: 1.5; resize: vertical; }
+  .choice-box {
+    border: 1px solid var(--ornament);
+    background: var(--bg);
+    padding: 8px; margin-top: 12px;
+  }
+  .choice-box .head { display: flex; justify-content: space-between; align-items: center; font-weight: bold; font-size: 13px; }
+  .choice-box .head button { font-size: 11px; padding: 2px 8px; border: 1px solid var(--red); color: var(--red); background: transparent; cursor: pointer; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .delta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+  .delta-grid input { padding: 3px 4px; font-size: 12px; }
+  .delta-grid .dl { font-size: 10px; color: var(--ink-soft); text-align: center; }
+  .inline-check { display: flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 13px; }
+  .inline-check input { width: auto; }
+  #inspector .add-btn, #inspector .danger-btn {
+    width: 100%; margin-top: 12px; padding: 7px;
+    font-family: inherit; font-size: 13px; cursor: pointer;
+    background: var(--bg); border: 1px dashed var(--frame); color: var(--ink);
+  }
+  #inspector .danger-btn { border: 1px solid var(--red); color: var(--red); margin-top: 20px; }
+</style>
+
+<div id="toolbar">
+  <b>스토리 트리 에디터</b>
+  <button class="primary" id="bt-test">게임에서 테스트</button>
+  <button id="bt-add">+ 새 노드</button>
+  <button id="bt-export-js">story.js 내보내기</button>
+  <button id="bt-export-json">story.json 내보내기</button>
+  <button id="bt-discard">초안 버리기</button>
+  <span id="save-status"></span>
+</div>
+<div id="main">
+  <div id="canvas-wrap"><div id="canvas"><svg id="edges"></svg></div></div>
+  <div id="inspector"><h2>노드를 선택하세요</h2>
+    <p class="hint">왼쪽 트리에서 카드를 클릭하면 여기서 본문과 선택지를 편집할 수 있습니다.<br><br>
+    · 편집 내용은 이 브라우저에 자동 저장(초안)되고, [게임에서 테스트]로 바로 플레이해 볼 수 있습니다.<br>
+    · 확정되면 [story.js 내보내기]로 파일을 받아 저장소의 story.js를 교체하세요.<br>
+    · 초록 실선 = 성공/진행, 빨간 점선 = 실패 분기.</p>
+  </div>
+</div>
+<datalist id="node-ids"></datalist>
+
+<script src="story.js"></script>
+<script>
+'use strict';
+const DRAFT_KEY = 'mist_story_draft';
+const STAT_NAME = { '': '판정 없음', grit: '담력', agi: '민첩', mem: '기억' };
+const CHECK_COLOR = { grit: 'var(--red)', agi: 'var(--blue)', mem: 'var(--purple)' };
+const DELTA_KEYS = ['hp', 'gold', 'ember', 'grit', 'agi', 'mem', 'dist', 'distset'];
+const DELTA_LABEL = { hp: '생명', gold: '금화', ember: '불씨', grit: '담력', agi: '민첩', mem: '기억', dist: '거리±', distset: '거리=' };
+
+let story;           // { nodes: [...] }
+let selectedId = null;
+let usingDraft = false;
+
+(function load() {
+  try {
+    const d = localStorage.getItem(DRAFT_KEY);
+    if (d) { story = JSON.parse(d); usingDraft = true; }
+  } catch (e) {}
+  if (!story) story = JSON.parse(JSON.stringify(window.STORY_DATA));
+  setStatus(usingDraft ? '저장된 초안을 불러왔습니다' : 'story.js 원본을 불러왔습니다');
+})();
+
+const byId = id => story.nodes.find(n => n.id === id);
+
+/* ---------- 자동 저장 ---------- */
+let saveTimer = null;
+function markDirty(skipTree) {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    localStorage.setItem(DRAFT_KEY, JSON.stringify(story));
+    usingDraft = true;
+    setStatus('초안 자동 저장됨 ' + new Date().toLocaleTimeString());
+  }, 600);
+  if (!skipTree) scheduleTree();
+}
+let treeTimer = null;
+function scheduleTree() { clearTimeout(treeTimer); treeTimer = setTimeout(renderTree, 350); }
+function setStatus(t) { document.getElementById('save-status').textContent = t; }
+
+/* ---------- 트리 렌더 ---------- */
+function layout() {
+  const depth = {};
+  const queue = [];
+  if (byId('intro')) { depth.intro = 0; queue.push('intro'); }
+  while (queue.length) {
+    const id = queue.shift();
+    const n = byId(id);
+    if (!n) continue;
+    for (const c of n.choices) {
+      for (const t of [c.s, c.f]) {
+        if (t && byId(t) && depth[t] === undefined) { depth[t] = depth[id] + 1; queue.push(t); }
+      }
+    }
+  }
+  let maxD = 0;
+  for (const k in depth) maxD = Math.max(maxD, depth[k]);
+  const orphanCol = maxD + 1;
+  const colY = {};
+  const pos = {};
+  for (const n of story.nodes) {
+    const d = depth[n.id] === undefined ? orphanCol : depth[n.id];
+    colY[d] = colY[d] || 20;
+    const h = 62 + 20 * Math.min(n.choices.length, 4) + 16;
+    pos[n.id] = { x: 20 + d * 280, y: colY[d], h, orphan: depth[n.id] === undefined };
+    colY[d] += h + 18;
+  }
+  let w = 20 + (orphanCol + 1) * 280 + 40;
+  let h = 40;
+  for (const k in colY) h = Math.max(h, colY[k]);
+  return { pos, w, h: h + 40 };
+}
+
+function renderTree() {
+  const { pos, w, h } = layout();
+  const canvas = document.getElementById('canvas');
+  canvas.style.width = w + 'px';
+  canvas.style.height = h + 'px';
+  canvas.querySelectorAll('.node-card').forEach(e => e.remove());
+  const svg = document.getElementById('edges');
+  svg.setAttribute('width', w);
+  svg.setAttribute('height', h);
+  svg.innerHTML = '';
+
+  const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  for (const n of story.nodes) {
+    const p = pos[n.id];
+    const card = document.createElement('div');
+    card.className = 'node-card' + (n.id === selectedId ? ' selected' : '') + (p.orphan ? ' orphan' : '');
+    card.style.left = p.x + 'px';
+    card.style.top = p.y + 'px';
+    let html = `<div class="nid">${esc(n.id)}${n.ending ? ' <span class="flag">■결말</span>' : ''}${p.orphan && n.id !== 'forgotten' ? ' <span class="flag" style="color:var(--red)">연결 안 됨</span>' : ''}</div>`;
+    html += `<div class="snippet">${esc(n.text.slice(0, 42))}…</div>`;
+    n.choices.slice(0, 4).forEach(c => {
+      const okS = !!byId(c.s), okF = !c.f || !!byId(c.f);
+      html += `<div class="ch">${c.check ? `<span class="tag" style="color:${CHECK_COLOR[c.check]}">[${STAT_NAME[c.check]}]</span> ` : ''}${esc(c.t.slice(0, 20))} <span class="${okS && okF ? 'tag' : 'bad'}">→${esc(c.s)}${!okS || !okF ? ' ?' : ''}</span></div>`;
+    });
+    if (n.choices.length > 4) html += `<div class="ch">…선택지 ${n.choices.length}개</div>`;
+    card.innerHTML = html;
+    card.addEventListener('click', () => { selectedId = n.id; renderTree(); renderInspector(); });
+    canvas.appendChild(card);
+
+    // 간선
+    n.choices.forEach((c, ci) => {
+      const y0 = p.y + 52 + ci * 14;
+      drawEdge(svg, p.x + 230, Math.min(y0, p.y + p.h - 10), c.s, pos, false);
+      if (c.f && c.f !== c.s) drawEdge(svg, p.x + 230, Math.min(y0 + 5, p.y + p.h - 6), c.f, pos, true);
+    });
+  }
+}
+
+function drawEdge(svg, x0, y0, targetId, pos, isFail) {
+  const tp = pos[targetId];
+  if (!tp) return;
+  const x1 = tp.x, y1 = tp.y + 26;
+  const mx = (x0 + x1) / 2;
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', `M ${x0} ${y0} C ${mx} ${y0}, ${mx} ${y1}, ${x1} ${y1}`);
+  path.setAttribute('fill', 'none');
+  path.setAttribute('stroke', isFail ? '#B03A48' : '#5F8F4E');
+  path.setAttribute('stroke-width', '1.6');
+  path.setAttribute('opacity', '0.55');
+  if (isFail) path.setAttribute('stroke-dasharray', '5 4');
+  svg.appendChild(path);
+}
+
+/* ---------- 인스펙터 ---------- */
+function refreshIdList() {
+  document.getElementById('node-ids').innerHTML = story.nodes.map(n => `<option value="${n.id}">`).join('');
+}
+
+function renderInspector() {
+  refreshIdList();
+  const box = document.getElementById('inspector');
+  const n = byId(selectedId);
+  if (!n) { box.innerHTML = '<h2>노드를 선택하세요</h2>'; return; }
+  box.innerHTML = '';
+
+  const h2 = document.createElement('h2');
+  h2.textContent = '노드: ' + n.id;
+  box.appendChild(h2);
+
+  box.insertAdjacentHTML('beforeend', '<label>본문</label>');
+  const ta = document.createElement('textarea');
+  ta.value = n.text;
+  ta.addEventListener('input', () => { n.text = ta.value; markDirty(); });
+  box.appendChild(ta);
+
+  const endWrap = document.createElement('div');
+  endWrap.className = 'inline-check';
+  const endCb = document.createElement('input');
+  endCb.type = 'checkbox';
+  endCb.checked = !!n.ending;
+  endCb.addEventListener('change', () => { n.ending = endCb.checked; markDirty(); });
+  endWrap.appendChild(endCb);
+  endWrap.appendChild(document.createTextNode('결말 노드'));
+  box.appendChild(endWrap);
+
+  n.choices.forEach((c, i) => box.appendChild(choiceEditor(n, c, i)));
+
+  const add = document.createElement('button');
+  add.className = 'add-btn';
+  add.textContent = '+ 선택지 추가';
+  add.addEventListener('click', () => {
+    n.choices.push({ t: '새 선택지', check: '', s: 'intro', f: 'intro', sd: { distset: -1 }, fd: { distset: -1 }, cost: 0, ecost: 0 });
+    markDirty();
+    renderInspector();
+  });
+  box.appendChild(add);
+
+  const del = document.createElement('button');
+  del.className = 'danger-btn';
+  del.textContent = '노드 삭제';
+  del.addEventListener('click', () => {
+    const refs = [];
+    story.nodes.forEach(o => o.choices.forEach(c => { if (c.s === n.id || c.f === n.id) refs.push(o.id); }));
+    const warn = refs.length ? `\n주의: ${[...new Set(refs)].join(', ')} 노드가 이 노드를 가리키고 있습니다.` : '';
+    if (!confirm(`'${n.id}' 노드를 삭제할까요?${warn}`)) return;
+    story.nodes = story.nodes.filter(o => o !== n);
+    selectedId = null;
+    markDirty();
+    renderInspector();
+  });
+  box.appendChild(del);
+}
+
+function choiceEditor(n, c, i) {
+  const wrap = document.createElement('div');
+  wrap.className = 'choice-box';
+
+  const head = document.createElement('div');
+  head.className = 'head';
+  head.textContent = `선택지 ${i + 1}`;
+  const rm = document.createElement('button');
+  rm.textContent = '삭제';
+  rm.addEventListener('click', () => {
+    if (!confirm(`선택지 ${i + 1}을 삭제할까요?`)) return;
+    n.choices.splice(i, 1);
+    markDirty();
+    renderInspector();
+  });
+  head.appendChild(rm);
+  wrap.appendChild(head);
+
+  const field = (label, value, onInput, attrs = {}) => {
+    wrap.insertAdjacentHTML('beforeend', `<label>${label}</label>`);
+    const inp = document.createElement(attrs.tag || 'input');
+    if (attrs.list) inp.setAttribute('list', attrs.list);
+    if (attrs.type) inp.type = attrs.type;
+    inp.value = value;
+    inp.addEventListener('input', () => onInput(inp.value));
+    wrap.appendChild(inp);
+    return inp;
+  };
+
+  field('선택지 문구', c.t, v => { c.t = v; markDirty(); });
+
+  wrap.insertAdjacentHTML('beforeend', '<label>판정 스탯</label>');
+  const sel = document.createElement('select');
+  for (const k of ['', 'grit', 'agi', 'mem']) {
+    const o = document.createElement('option');
+    o.value = k;
+    o.textContent = STAT_NAME[k];
+    sel.appendChild(o);
+  }
+  sel.value = c.check || '';
+  sel.addEventListener('change', () => { c.check = sel.value; markDirty(); renderInspector(); });
+  wrap.appendChild(sel);
+
+  const row = document.createElement('div');
+  row.className = 'row2';
+  const sCol = document.createElement('div');
+  const fCol = document.createElement('div');
+  row.appendChild(sCol); row.appendChild(fCol);
+  const mkTarget = (col, label, key) => {
+    col.insertAdjacentHTML('beforeend', `<label>${label}</label>`);
+    const inp = document.createElement('input');
+    inp.setAttribute('list', 'node-ids');
+    inp.value = c[key] || '';
+    inp.addEventListener('input', () => {
+      c[key] = inp.value;
+      inp.style.borderColor = byId(inp.value) ? '' : 'var(--red)';
+      markDirty();
+    });
+    inp.style.borderColor = byId(c[key]) ? '' : 'var(--red)';
+    col.appendChild(inp);
+  };
+  mkTarget(sCol, c.check ? '성공 시 이동' : '다음 노드', 's');
+  if (c.check) mkTarget(fCol, '실패 시 이동', 'f'); else { c.f = c.s; }
+  wrap.appendChild(row);
+
+  const costRow = document.createElement('div');
+  costRow.className = 'row2';
+  const gCol = document.createElement('div');
+  const eCol = document.createElement('div');
+  costRow.appendChild(gCol); costRow.appendChild(eCol);
+  const mkCost = (col, label, key) => {
+    col.insertAdjacentHTML('beforeend', `<label>${label}</label>`);
+    const inp = document.createElement('input');
+    inp.type = 'number';
+    inp.value = c[key] || 0;
+    inp.addEventListener('input', () => { c[key] = parseInt(inp.value) || 0; markDirty(); });
+    col.appendChild(inp);
+  };
+  mkCost(gCol, '필요 금화', 'cost');
+  mkCost(eCol, '필요 불씨', 'ecost');
+  wrap.appendChild(costRow);
+
+  wrap.appendChild(deltaEditor(c.check ? '성공 시 변화' : '변화량', c, 'sd'));
+  if (c.check) wrap.appendChild(deltaEditor('실패 시 변화', c, 'fd'));
+  return wrap;
+}
+
+function deltaEditor(label, c, key) {
+  const frag = document.createElement('div');
+  frag.insertAdjacentHTML('beforeend', `<label>${label} (거리= 는 -1이면 사용 안 함)</label>`);
+  const grid = document.createElement('div');
+  grid.className = 'delta-grid';
+  if (!c[key]) c[key] = { distset: -1 };
+  for (const k of DELTA_KEYS) {
+    const cell = document.createElement('div');
+    cell.innerHTML = `<div class="dl">${DELTA_LABEL[k]}</div>`;
+    const inp = document.createElement('input');
+    inp.type = 'number';
+    inp.value = c[key][k] !== undefined ? c[key][k] : (k === 'distset' ? -1 : 0);
+    inp.addEventListener('input', () => {
+      const v = parseInt(inp.value);
+      c[key][k] = isNaN(v) ? (k === 'distset' ? -1 : 0) : v;
+      markDirty();
+    });
+    cell.appendChild(inp);
+    grid.appendChild(cell);
+  }
+  frag.appendChild(grid);
+  return frag;
+}
+
+/* ---------- 툴바 ---------- */
+document.getElementById('bt-test').addEventListener('click', () => {
+  clearTimeout(saveTimer);
+  localStorage.setItem(DRAFT_KEY, JSON.stringify(story));
+  setStatus('초안 저장 후 테스트 창을 열었습니다');
+  window.open('index.html?draft=1', 'mist-test');
+});
+
+document.getElementById('bt-add').addEventListener('click', () => {
+  const id = prompt('새 노드 id (영문/숫자/_ 권장):');
+  if (!id) return;
+  if (byId(id)) { alert('이미 있는 id입니다: ' + id); return; }
+  story.nodes.push({ id, text: '새 노드 본문', ending: false, choices: [] });
+  selectedId = id;
+  markDirty();
+  renderInspector();
+});
+
+function download(name, content) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([content], { type: 'text/plain;charset=utf-8' }));
+  a.download = name;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+document.getElementById('bt-export-js').addEventListener('click', () => {
+  download('story.js', '// 스토리 단일 소스 — editor.html에서 편집·내보내기\nwindow.STORY_DATA = ' + JSON.stringify(story, null, 1) + ';\n');
+});
+document.getElementById('bt-export-json').addEventListener('click', () => {
+  download('story.json', JSON.stringify(story, null, 1));
+});
+document.getElementById('bt-discard').addEventListener('click', () => {
+  if (!confirm('초안을 버리고 story.js 원본으로 되돌릴까요?')) return;
+  localStorage.removeItem(DRAFT_KEY);
+  location.reload();
+});
+
+renderTree();
+</script>
