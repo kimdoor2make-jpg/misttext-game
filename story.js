@@ -2,6 +2,440 @@
 window.STORY_DATA = {
  "nodes": [
   {
+   "id": "cc_parent",
+   "ending": false,
+   "text": "운명은 태어난 화롯가에서 첫 장작을 얻는다.\n 어느 왕국의 변두리, 안개가 아직 먼 이야기이던 시절 — 당신은 태어났다.\n 당신의 부모는 어떤 사람이었는가?",
+   "choices": [
+    {
+     "t": "국경 마을의 대장장이",
+     "check": "",
+     "s": "cc_youth",
+     "f": "cc_youth",
+     "sd": {
+      "distset": -1,
+      "str": 3,
+      "maxhp": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "궁정 마법사의 탑지기",
+     "check": "",
+     "s": "cc_youth",
+     "f": "cc_youth",
+     "sd": {
+      "distset": -1,
+      "mag": 3,
+      "maxmp": 4
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "수도원의 필사 학자",
+     "check": "",
+     "s": "cc_youth",
+     "f": "cc_youth",
+     "sd": {
+      "distset": -1,
+      "int": 3,
+      "ember": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "숲가의 사냥꾼",
+     "check": "",
+     "s": "cc_youth",
+     "f": "cc_youth",
+     "sd": {
+      "distset": -1,
+      "agi": 3,
+      "gold": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "떠도는 유랑 악단",
+     "check": "",
+     "s": "cc_youth",
+     "f": "cc_youth",
+     "sd": {
+      "distset": -1,
+      "tal": 2,
+      "luck": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "몰락한 귀족 가문",
+     "check": "",
+     "s": "cc_youth",
+     "f": "cc_youth",
+     "sd": {
+      "distset": -1,
+      "gold": 8,
+      "tal": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    }
+   ]
+  },
+  {
+   "id": "cc_youth",
+   "ending": false,
+   "text": "화롯불이 낮아질 무렵, 어린 시절은 끝났다.\n 열다섯의 당신은 하루의 대부분을 무엇에 쏟았는가?",
+   "choices": [
+    {
+     "t": "울타리 밖에서의 검술 수련",
+     "check": "",
+     "s": "cc_adult",
+     "f": "cc_adult",
+     "sd": {
+      "distset": -1,
+      "str": 2,
+      "maxhp": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "낡은 주문서를 몰래 베껴 쓰기",
+     "check": "",
+     "s": "cc_adult",
+     "f": "cc_adult",
+     "sd": {
+      "distset": -1,
+      "mag": 2,
+      "maxmp": 3
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "도서관의 고서 탐독",
+     "check": "",
+     "s": "cc_adult",
+     "f": "cc_adult",
+     "sd": {
+      "distset": -1,
+      "int": 2,
+      "ember": 1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "뒷골목 심부름과 지붕 타기",
+     "check": "",
+     "s": "cc_adult",
+     "f": "cc_adult",
+     "sd": {
+      "distset": -1,
+      "agi": 2,
+      "gold": 3
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "정처 없는 떠돌이 생활",
+     "check": "",
+     "s": "cc_adult",
+     "f": "cc_adult",
+     "sd": {
+      "distset": -1,
+      "luck": 3
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "축제 무대에서 노래하기",
+     "check": "",
+     "s": "cc_adult",
+     "f": "cc_adult",
+     "sd": {
+      "distset": -1,
+      "tal": 2,
+      "luck": 1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    }
+   ]
+  },
+  {
+   "id": "cc_adult",
+   "ending": false,
+   "text": "손에 굳은살이 앉고, 어깨가 단단해졌다.\n 어른이 된 당신은 무엇으로 빵을 벌었는가?",
+   "choices": [
+    {
+     "t": "국경 수비대의 용병",
+     "check": "",
+     "s": "cc_reason",
+     "f": "cc_reason",
+     "sd": {
+      "distset": -1,
+      "str": 2,
+      "maxhp": 3,
+      "gold": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "탑의 견습 마법사",
+     "check": "",
+     "s": "cc_reason",
+     "f": "cc_reason",
+     "sd": {
+      "distset": -1,
+      "mag": 3,
+      "maxmp": 4
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "영주청의 필경사",
+     "check": "",
+     "s": "cc_reason",
+     "f": "cc_reason",
+     "sd": {
+      "distset": -1,
+      "int": 2,
+      "gold": 3
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "숲을 누비는 밀렵꾼",
+     "check": "",
+     "s": "cc_reason",
+     "f": "cc_reason",
+     "sd": {
+      "distset": -1,
+      "agi": 2,
+      "gold": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "주사위 도박꾼",
+     "check": "",
+     "s": "cc_reason",
+     "f": "cc_reason",
+     "sd": {
+      "distset": -1,
+      "luck": 3,
+      "gold": 4
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "선술집의 음유시인",
+     "check": "",
+     "s": "cc_reason",
+     "f": "cc_reason",
+     "sd": {
+      "distset": -1,
+      "tal": 3,
+      "gold": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    }
+   ]
+  },
+  {
+   "id": "cc_reason",
+   "ending": false,
+   "text": "그리고 어느 밤, 당신은 등불을 끄고 조용히 집 문을 닫았다.\n 무엇이 당신을 길 위로 이끌었는가?\n — 이 선택부터, 운명은 온전히 당신의 것이다.",
+   "choices": [
+    {
+     "t": "가족을 해친 자에 대한 복수",
+     "check": "",
+     "s": "intro",
+     "f": "intro",
+     "sd": {
+      "distset": -1,
+      "str": 1,
+      "maxhp": 1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "금지된 마법서가 부르는 소리",
+     "check": "",
+     "s": "intro",
+     "f": "intro",
+     "sd": {
+      "distset": -1,
+      "mag": 1,
+      "maxmp": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "세상의 진실을 향한 갈증",
+     "check": "",
+     "s": "intro",
+     "f": "intro",
+     "sd": {
+      "distset": -1,
+      "int": 1,
+      "ember": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "내 이름 위에 붙은 수배령",
+     "check": "",
+     "s": "intro",
+     "f": "intro",
+     "sd": {
+      "distset": -1,
+      "agi": 1,
+      "luck": 1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "떠돌이 점성술사의 예언",
+     "check": "",
+     "s": "intro",
+     "f": "intro",
+     "sd": {
+      "distset": -1,
+      "luck": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    },
+    {
+     "t": "더 큰 무대를 향한 꿈",
+     "check": "",
+     "s": "intro",
+     "f": "intro",
+     "sd": {
+      "distset": -1,
+      "tal": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "ecost": 0,
+     "mcost": 0
+    }
+   ]
+  },
+  {
    "id": "intro",
    "text": "무월의 밤, 왕관이 떨어진 뒤로 잊힌 것들은 안개가 되었다.\n 안개나루의 푸른 등불만이 아직 당신의 이름을 지켜 주고 있다.\n 나루지기가 낡은 지도를 내민다.\n \"해류 봉화의 불이 꺼졌네. 이름을 되부르는 불이 꺼지면, 이 나루도 오래 버티지 못해.\"",
    "ending": false,
@@ -19,7 +453,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     },
     {
      "t": "떠나기 전 등불 아래에서 내 이름을 세 번 되뇐다",
@@ -34,7 +469,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -56,7 +492,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -78,7 +515,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     },
     {
      "t": "잿빛 숲 길로 간다",
@@ -93,7 +531,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -104,12 +543,12 @@ window.STORY_DATA = {
    "choices": [
     {
      "t": "제단의 별빛에 손을 얹고 옛 노래를 떠올린다",
-     "check": "mem",
+     "check": "int",
      "s": "marsh_success",
      "f": "marsh_fail",
      "sd": {
       "ember": 2,
-      "mem": 1,
+      "int": 1,
       "distset": -1
      },
      "fd": {
@@ -117,7 +556,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     },
     {
      "t": "위험하다. 제단을 지나쳐 간다",
@@ -132,7 +572,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -154,7 +595,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -176,7 +618,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -199,15 +642,16 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     },
     {
      "t": "튕겨낸다",
-     "check": "grit",
+     "check": "str",
      "s": "ambush_parry",
      "f": "ambush_hit",
      "sd": {
-      "grit": 1,
+      "str": 1,
       "distset": -1
      },
      "fd": {
@@ -215,7 +659,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -238,7 +683,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -260,7 +706,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -282,7 +729,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -293,7 +741,7 @@ window.STORY_DATA = {
    "choices": [
     {
      "t": "종에 잠수해 종을 울린다",
-     "check": "grit",
+     "check": "str",
      "s": "bell_ring",
      "f": "bell_fail",
      "sd": {
@@ -306,7 +754,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     },
     {
      "t": "상인에게서 소금절임 약초를 산다 (금화 5)",
@@ -322,7 +771,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 5,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     },
     {
      "t": "종루를 지나 봉화 절벽으로 향한다",
@@ -337,7 +787,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -359,7 +810,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -381,7 +833,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -403,7 +856,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -414,26 +868,27 @@ window.STORY_DATA = {
    "choices": [
     {
      "t": "나루지기의 지도 여백에 적힌 옛 글자를 떠올린다",
-     "check": "mem",
+     "check": "int",
      "s": "beacon_lit",
      "f": "guardian_fight",
      "sd": {
-      "mem": 1,
+      "int": 1,
       "distset": 0
      },
      "fd": {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     },
     {
      "t": "힘으로 밀고 지나간다",
-     "check": "grit",
+     "check": "str",
      "s": "guardian_beaten",
      "f": "guardian_lose",
      "sd": {
-      "grit": 1,
+      "str": 1,
       "distset": -1
      },
      "fd": {
@@ -441,7 +896,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -464,7 +920,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -485,7 +942,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 3
+     "ecost": 3,
+     "mcost": 0
     },
     {
      "t": "제 피로 불을 먹인다 (생명 4)",
@@ -500,7 +958,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -521,7 +980,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -542,7 +1002,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -564,7 +1025,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     },
     {
      "t": "벼랑 능선으로 질러간다",
@@ -582,7 +1044,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -593,19 +1056,20 @@ window.STORY_DATA = {
    "choices": [
     {
      "t": "그의 잊힌 이름을 함께 더듬는다",
-     "check": "mem",
+     "check": "int",
      "s": "hunter_named",
      "f": "hunter_blank",
      "sd": {
       "ember": 2,
-      "mem": 1,
+      "int": 1,
       "distset": -1
      },
      "fd": {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     },
     {
      "t": "말없이 고개를 숙이고 지나간다",
@@ -620,7 +1084,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -643,7 +1108,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -665,7 +1131,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -686,7 +1153,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -707,7 +1175,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -718,12 +1187,12 @@ window.STORY_DATA = {
    "choices": [
     {
      "t": "맞서 벤다",
-     "check": "grit",
+     "check": "str",
      "s": "echo_win",
      "f": "echo_hurt",
      "sd": {
       "ember": 1,
-      "grit": 1,
+      "str": 1,
       "distset": -1
      },
      "fd": {
@@ -731,16 +1200,17 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     },
     {
      "t": "그 기억을 내 것으로 받아들인다",
-     "check": "mem",
+     "check": "int",
      "s": "echo_embrace",
      "f": "echo_hurt",
      "sd": {
       "ember": 2,
-      "mem": 2,
+      "int": 2,
       "distset": -1
      },
      "fd": {
@@ -748,7 +1218,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -770,7 +1241,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -792,7 +1264,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -814,7 +1287,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -838,7 +1312,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 6,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     },
     {
      "t": "마른 부싯깃을 산다 (금화 8)",
@@ -855,7 +1330,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 8,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     },
     {
      "t": "눈인사만 하고 계속 오른다",
@@ -870,7 +1346,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -881,11 +1358,11 @@ window.STORY_DATA = {
    "choices": [
     {
      "t": "지나온 이들의 이름을 하나씩 답한다",
-     "check": "mem",
+     "check": "int",
      "s": "prophet_pass",
      "f": "prophet_fail",
      "sd": {
-      "mem": 1,
+      "int": 1,
       "distset": -1
      },
      "fd": {
@@ -893,7 +1370,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     },
     {
      "t": "타오르는 불씨를 장막에 흩뿌린다 (불씨 4)",
@@ -907,15 +1385,16 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 4
+     "ecost": 4,
+     "mcost": 0
     },
     {
      "t": "장막을 찢고 지나간다",
-     "check": "grit",
+     "check": "str",
      "s": "prophet_pass",
      "f": "prophet_fail",
      "sd": {
-      "grit": 1,
+      "str": 1,
       "distset": -1
      },
      "fd": {
@@ -923,7 +1402,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -945,7 +1425,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -966,7 +1447,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -987,7 +1469,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 5
+     "ecost": 5,
+     "mcost": 0
     },
     {
      "t": "제 피로 불을 먹인다 (생명 5)",
@@ -1002,7 +1485,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -1014,8 +1498,8 @@ window.STORY_DATA = {
     {
      "t": "처음부터 다시 (3장 「흑요석 관문」은 준비 중)",
      "check": "",
-     "s": "intro",
-     "f": "intro",
+     "s": "cc_parent",
+     "f": "cc_parent",
      "sd": {
       "distset": -1
      },
@@ -1023,7 +1507,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   },
@@ -1035,8 +1520,8 @@ window.STORY_DATA = {
     {
      "t": "등불의 부름에 답하며 눈을 뜬다 (처음부터)",
      "check": "",
-     "s": "intro",
-     "f": "intro",
+     "s": "cc_parent",
+     "f": "cc_parent",
      "sd": {
       "distset": -1
      },
@@ -1044,7 +1529,8 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0
+     "ecost": 0,
+     "mcost": 0
     }
    ]
   }

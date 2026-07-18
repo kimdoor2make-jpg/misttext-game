@@ -175,11 +175,11 @@
 <script src="story.js"></script>
 <script>
 'use strict';
-const DRAFT_KEY = 'mist_story_draft';
-const STAT_NAME = { '': '판정 없음', grit: '담력', agi: '민첩', mem: '기억' };
-const CHECK_COLOR = { grit: 'var(--red)', agi: 'var(--blue)', mem: 'var(--purple)' };
-const DELTA_KEYS = ['hp', 'gold', 'ember', 'grit', 'agi', 'mem', 'dist', 'distset'];
-const DELTA_LABEL = { hp: '생명', gold: '금화', ember: '불씨', grit: '담력', agi: '민첩', mem: '기억', dist: '거리±', distset: '거리=' };
+const DRAFT_KEY = 'mist_story_draft2';
+const STAT_NAME = { '': '판정 없음', str: '근력', mag: '마력', int: '지능', agi: '민첩', luck: '운', tal: '재능' };
+const CHECK_COLOR = { str: 'var(--red)', mag: 'var(--blue)', int: 'var(--purple)', agi: 'var(--green)', luck: 'var(--gold)', tal: 'var(--ember)' };
+const DELTA_KEYS = ['hp', 'maxhp', 'mp', 'maxmp', 'gold', 'ember', 'str', 'mag', 'int', 'agi', 'luck', 'tal', 'dist', 'distset'];
+const DELTA_LABEL = { hp: '생명', maxhp: '최대생명', mp: '마력치', maxmp: '최대마력', gold: '금화', ember: '불씨', str: '근력', mag: '마력', int: '지능', agi: '민첩', luck: '운', tal: '재능', dist: '거리±', distset: '거리=' };
 
 let story;
 let selectedId = null;
@@ -387,7 +387,7 @@ function cancelLink() {
 function finishLink(targetId) {
   const src = byId(linkSourceId);
   if (src && targetId !== linkSourceId) {
-    src.choices.push({ t: '새 선택지', check: '', s: targetId, f: targetId, sd: { distset: -1 }, fd: { distset: -1 }, cost: 0, ecost: 0 });
+    src.choices.push({ t: '새 선택지', check: '', s: targetId, f: targetId, sd: { distset: -1 }, fd: { distset: -1 }, cost: 0, ecost: 0, mcost: 0 });
     selectedId = src.id;
     markDirty();
     renderInspector();
@@ -435,7 +435,7 @@ function renderInspector() {
   add.className = 'add-btn';
   add.textContent = '+ 선택지 추가';
   add.addEventListener('click', () => {
-    n.choices.push({ t: '새 선택지', check: '', s: 'intro', f: 'intro', sd: { distset: -1 }, fd: { distset: -1 }, cost: 0, ecost: 0 });
+    n.choices.push({ t: '새 선택지', check: '', s: 'intro', f: 'intro', sd: { distset: -1 }, fd: { distset: -1 }, cost: 0, ecost: 0, mcost: 0 });
     markDirty();
     renderInspector();
   });
@@ -488,7 +488,7 @@ function choiceEditor(n, c, i) {
 
   wrap.insertAdjacentHTML('beforeend', '<label>판정 스탯</label>');
   const sel = document.createElement('select');
-  for (const k of ['', 'grit', 'agi', 'mem']) {
+  for (const k of ['', 'str', 'mag', 'int', 'agi', 'luck', 'tal']) {
     const o = document.createElement('option');
     o.value = k;
     o.textContent = STAT_NAME[k];
@@ -522,9 +522,11 @@ function choiceEditor(n, c, i) {
 
   const costRow = document.createElement('div');
   costRow.className = 'row2';
+  costRow.style.gridTemplateColumns = '1fr 1fr 1fr';
   const gCol = document.createElement('div');
   const eCol = document.createElement('div');
-  costRow.appendChild(gCol); costRow.appendChild(eCol);
+  const mCol = document.createElement('div');
+  costRow.appendChild(gCol); costRow.appendChild(eCol); costRow.appendChild(mCol);
   const mkCost = (col, label, key) => {
     col.insertAdjacentHTML('beforeend', `<label>${label}</label>`);
     const inp = document.createElement('input');
@@ -535,6 +537,7 @@ function choiceEditor(n, c, i) {
   };
   mkCost(gCol, '필요 금화', 'cost');
   mkCost(eCol, '필요 불씨', 'ecost');
+  mkCost(mCol, '필요 마력', 'mcost');
   wrap.appendChild(costRow);
 
   wrap.appendChild(deltaEditor(c.check ? '성공 시 변화' : '변화량', c, 'sd'));
