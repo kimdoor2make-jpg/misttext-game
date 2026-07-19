@@ -138,6 +138,12 @@
     background: var(--bg); border: 1px dashed var(--frame); color: var(--ink);
   }
   #inspector .danger-btn { border: 1px solid var(--red); color: var(--red); margin-top: 20px; }
+
+  /* 좁은 화면(모바일/세로 창): 인스펙터를 하단 시트로 */
+  @media (max-width: 900px) {
+    #main { flex-direction: column; }
+    #inspector { width: 100%; min-width: 0; max-height: 45%; border-left: none; border-top: 2px solid var(--frame); }
+  }
 </style>
 
 <div id="toolbar">
@@ -145,7 +151,9 @@
   <button id="bt-help">사용법 ▾</button>
   <button class="primary" id="bt-test">게임에서 테스트</button>
   <button id="bt-add">+ 새 노드</button>
+  <button id="bt-dir">배치: 가로</button>
   <button id="bt-layout">자동 정렬</button>
+  <button id="bt-prompts">이미지 프롬프트 내보내기</button>
   <button id="bt-export-js">story.js 내보내기</button>
   <button id="bt-export-json">story.json 내보내기</button>
   <button id="bt-discard">초안 버리기</button>
@@ -187,6 +195,7 @@ let selectedId = null;
 let usingDraft = false;
 let linkSourceId = null; // 연결 모드 출발 노드
 let lastPos = {};        // 마지막 레이아웃 (드래그 중 간선 갱신용)
+let treeDir = localStorage.getItem('mist_editor_dir') || 'h'; // h=가로(왼→오른쪽), v=세로(위→아래)
 
 (function load() {
   try {
@@ -221,7 +230,9 @@ function layout() {
   // 자동 배치(BFS 깊이 컬럼) — 수동 위치(n.x/n.y)가 있으면 그대로 사용
   const depth = {};
   const queue = [];
-  if (byId('intro')) { depth.intro = 0; queue.push('intro'); }
+  // 시작 노드 자동 감지: cc_parent → intro → 첫 노드
+  const rootId = byId('cc_parent') ? 'cc_parent' : (byId('intro') ? 'intro' : (story.nodes[0] && story.nodes[0].id));
+  if (rootId) { depth[rootId] = 0; queue.push(rootId); }
   while (queue.length) {
     const id = queue.shift();
     const n = byId(id);
@@ -235,20 +246,50 @@ function layout() {
   let maxD = 0;
   for (const k in depth) maxD = Math.max(maxD, depth[k]);
   const orphanCol = maxD + 1;
-  const colY = {};
   const pos = {};
-  for (const n of story.nodes) {
-    const h = cardHeight(n);
-    const orphan = depth[n.id] === undefined;
-    if (typeof n.x === 'number' && typeof n.y === 'number') {
-      pos[n.id] = { x: n.x, y: n.y, h, orphan };
-    } else {
+
+  if (treeDir === 'h') {
+    // 가로: 깊이 = 열(왼→오른쪽), 같은 깊이는 세로로 쌓음
+    const colY = {};
+    for (const n of story.nodes) {
+      const h = cardHeight(n);
+      const orphan = depth[n.id] === undefined;
+      if (typeof n.x === 'number' && typeof n.y === 'number') {
+        pos[n.id] = { x: n.x, y: n.y, h, orphan };
+      } else {
+        const d = orphan ? orphanCol : depth[n.id];
+        colY[d] = colY[d] || 20;
+        pos[n.id] = { x: 20 + d * 280, y: colY[d], h, orphan };
+        colY[d] += h + 18;
+      }
+    }
+  } else {
+    // 세로: 깊이 = 행(위→아래), 같은 깊이는 가로로 나란히
+    const groups = {};
+    for (const n of story.nodes) {
+      const orphan = depth[n.id] === undefined;
       const d = orphan ? orphanCol : depth[n.id];
-      colY[d] = colY[d] || 20;
-      pos[n.id] = { x: 20 + d * 280, y: colY[d], h, orphan };
-      colY[d] += h + 18;
+      (groups[d] = groups[d] || []).push(n);
+    }
+    let y = 20;
+    for (let d = 0; d <= orphanCol; d++) {
+      const row = groups[d] || [];
+      let x = 20, rowH = 0;
+      for (const n of row) {
+        const h = cardHeight(n);
+        const orphan = depth[n.id] === undefined;
+        if (typeof n.x === 'number' && typeof n.y === 'number') {
+          pos[n.id] = { x: n.x, y: n.y, h, orphan };
+        } else {
+          pos[n.id] = { x, y, h, orphan };
+          x += 250;
+          rowH = Math.max(rowH, h);
+        }
+      }
+      if (rowH > 0) y += rowH + 40;
     }
   }
+
   let w = 400, h = 200;
   for (const id in pos) { w = Math.max(w, pos[id].x + 300); h = Math.max(h, pos[id].y + pos[id].h + 40); }
   return { pos, w, h };
@@ -299,9 +340,15 @@ function drawEdges(pos, w, h) {
     const p = pos[n.id];
     if (!p) continue;
     n.choices.forEach((c, ci) => {
-      const y0 = Math.min(p.y + 52 + ci * 14, p.y + p.h - 10);
-      drawEdge(svg, p.x + 230, y0, c.s, pos, false);
-      if (c.f && c.f !== c.s) drawEdge(svg, p.x + 230, Math.min(y0 + 5, p.y + p.h - 6), c.f, pos, true);
+      if (treeDir === 'h') {
+        const y0 = Math.min(p.y + 52 + ci * 14, p.y + p.h - 10);
+        drawEdge(svg, p.x + 230, y0, c.s, pos, false);
+        if (c.f && c.f !== c.s) drawEdge(svg, p.x + 230, Math.min(y0 + 5, p.y + p.h - 6), c.f, pos, true);
+      } else {
+        const x0 = Math.min(p.x + 40 + ci * 30, p.x + 210);
+        drawEdge(svg, x0, p.y + p.h, c.s, pos, false);
+        if (c.f && c.f !== c.s) drawEdge(svg, x0 + 12, p.y + p.h, c.f, pos, true);
+      }
     });
   }
 }
@@ -309,10 +356,18 @@ function drawEdges(pos, w, h) {
 function drawEdge(svg, x0, y0, targetId, pos, isFail) {
   const tp = pos[targetId];
   if (!tp) return;
-  const x1 = tp.x, y1 = tp.y + 26;
-  const mx = (x0 + x1) / 2;
+  let d;
+  if (treeDir === 'h') {
+    const x1 = tp.x, y1 = tp.y + 26;
+    const mx = (x0 + x1) / 2;
+    d = `M ${x0} ${y0} C ${mx} ${y0}, ${mx} ${y1}, ${x1} ${y1}`;
+  } else {
+    const x1 = tp.x + 115, y1 = tp.y;
+    const my = (y0 + y1) / 2;
+    d = `M ${x0} ${y0} C ${x0} ${my}, ${x1} ${my}, ${x1} ${y1}`;
+  }
   const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-  path.setAttribute('d', `M ${x0} ${y0} C ${mx} ${y0}, ${mx} ${y1}, ${x1} ${y1}`);
+  path.setAttribute('d', d);
   path.setAttribute('fill', 'none');
   path.setAttribute('stroke', isFail ? '#B03A48' : '#5F8F4E');
   path.setAttribute('stroke-width', '1.6');
@@ -429,6 +484,37 @@ function renderInspector() {
   endWrap.appendChild(endCb);
   endWrap.appendChild(document.createTextNode('결말 노드'));
   box.appendChild(endWrap);
+
+  // 노드 삽화 — 파일명이 있고 web/img/에 파일이 있으면 게임에 자동 표시
+  box.insertAdjacentHTML('beforeend', '<label>삽화 파일명 (img/ 폴더 기준, 비우면 표시 안 함)</label>');
+  const imgInp = document.createElement('input');
+  imgInp.value = n.img || '';
+  imgInp.placeholder = n.id + '.png';
+  box.appendChild(imgInp);
+  const preview = document.createElement('img');
+  preview.style.cssText = 'width:100%;margin-top:6px;border:1px solid var(--panel-dark);display:none;';
+  const noImg = document.createElement('div');
+  noImg.className = 'hint';
+  noImg.style.marginTop = '4px';
+  box.appendChild(preview);
+  box.appendChild(noImg);
+  const refreshPreview = () => {
+    const f = (n.img || '').trim();
+    if (!f) { preview.style.display = 'none'; noImg.textContent = ''; return; }
+    preview.src = 'img/' + f;
+    preview.onload = () => { preview.style.display = 'block'; noImg.textContent = ''; };
+    preview.onerror = () => { preview.style.display = 'none'; noImg.textContent = '⚠ img/' + f + ' 파일이 아직 없습니다'; };
+  };
+  imgInp.addEventListener('input', () => { n.img = imgInp.value.trim(); markDirty(true); refreshPreview(); });
+  refreshPreview();
+
+  box.insertAdjacentHTML('beforeend', '<label>이미지 생성 프롬프트 (메모용 — 게임엔 안 나옴)</label>');
+  const promptTa = document.createElement('textarea');
+  promptTa.style.minHeight = '70px';
+  promptTa.value = n.imgprompt || '';
+  promptTa.placeholder = '이 장면을 그릴 프롬프트를 적어두세요';
+  promptTa.addEventListener('input', () => { n.imgprompt = promptTa.value; markDirty(true); });
+  box.appendChild(promptTa);
 
   n.choices.forEach((c, i) => box.appendChild(choiceEditor(n, c, i)));
 
@@ -642,6 +728,25 @@ document.getElementById('bt-layout').addEventListener('click', () => {
   if (!confirm('모든 노드의 수동 위치를 지우고 깊이순으로 자동 정렬할까요?')) return;
   story.nodes.forEach(n => { delete n.x; delete n.y; });
   markDirty();
+});
+
+const dirBtn = document.getElementById('bt-dir');
+function syncDirBtn() { dirBtn.textContent = treeDir === 'h' ? '배치: 가로' : '배치: 세로'; }
+syncDirBtn();
+dirBtn.addEventListener('click', () => {
+  treeDir = treeDir === 'h' ? 'v' : 'h';
+  localStorage.setItem('mist_editor_dir', treeDir);
+  story.nodes.forEach(n => { delete n.x; delete n.y; }); // 방향 전환 시 자동 재배치
+  syncDirBtn();
+  markDirty();
+  renderTree();
+});
+
+document.getElementById('bt-prompts').addEventListener('click', () => {
+  const lines = story.nodes.map(n =>
+    `[${n.id}] → img/${n.img || n.id + '.png'}\n프롬프트: ${n.imgprompt || '(미작성 — 본문: ' + n.text.slice(0, 60).replace(/\n/g, ' ') + '…)'}\n`);
+  download('image-prompts.txt',
+    '노드별 이미지 생성 프롬프트 목록\n생성한 이미지는 web/img/ 폴더에 아래 파일명으로 저장하면 게임에 자동 표시됩니다.\n권장: 가로 16:9 (768x432), 스타일 문구를 모든 프롬프트에 동일하게 붙여 일관성 유지.\n\n' + lines.join('\n'));
 });
 
 function download(name, content) {

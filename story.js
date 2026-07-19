@@ -126,7 +126,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "cc_youth",
@@ -252,7 +254,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "cc_adult",
@@ -380,7 +384,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "cc_reason",
@@ -505,7 +511,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "forgotten",
@@ -530,7 +538,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_road",
@@ -595,7 +605,9 @@ window.STORY_DATA = {
      "setflag": "hid_in_crowd",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "w1_road.png",
+   "imgprompt": "잿빛 하늘 아래 회색 들판, 긴 피난 행렬의 실루엣, 진창에 빠진 수레, 옅은 안개, 중세 판타지, 수채화풍, 16:9"
   },
   {
    "id": "w1_help",
@@ -640,7 +652,9 @@ window.STORY_DATA = {
      "setflag": "stayed_nameless",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_help_fail",
@@ -666,7 +680,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_hide",
@@ -692,7 +708,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_camp",
@@ -755,7 +773,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_revenge",
@@ -781,7 +801,9 @@ window.STORY_DATA = {
      "setflag": "revenge_lead",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_porter",
@@ -808,7 +830,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_role",
@@ -898,7 +922,9 @@ window.STORY_DATA = {
      "setflag": "role_scribe",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_night",
@@ -959,7 +985,9 @@ window.STORY_DATA = {
      "setflag": "answered_silence",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_alarm",
@@ -1026,7 +1054,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_stand",
@@ -1051,7 +1081,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_flank",
@@ -1076,7 +1108,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_wardhold",
@@ -1101,7 +1135,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_hurt",
@@ -1126,7 +1162,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_choice",
@@ -1169,7 +1207,9 @@ window.STORY_DATA = {
      "setflag": "saved_banner",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_save",
@@ -1196,7 +1236,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_banner",
@@ -1223,7 +1265,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_feat",
@@ -1249,7 +1293,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_feat_luck",
@@ -1275,7 +1321,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_after",
@@ -1318,7 +1366,9 @@ window.STORY_DATA = {
      "setflag": "ride_honest",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   },
   {
    "id": "w1_end",
@@ -1343,7 +1393,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": ""
     }
-   ]
+   ],
+   "img": "",
+   "imgprompt": ""
   }
  ]
 };

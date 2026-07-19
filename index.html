@@ -93,6 +93,10 @@
   #progress-fill { height: 100%; width: 0%; background: var(--bar-fill); transition: width .6s ease; }
   #progress-cap { width: 22px; height: 22px; background: var(--ornament); }
 
+  /* ---------- 노드 삽화 ---------- */
+  #illust { display: none; margin-top: 12px; border: 2px solid var(--frame); background: var(--panel-dark); }
+  #illust img { width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; }
+
   /* ---------- 본문 ---------- */
   .ornament-rule {
     display: flex; align-items: center; gap: 14px;
@@ -216,6 +220,8 @@
     <div id="progress-cap"></div>
   </div>
 
+  <div id="illust"><img id="illust-img" alt=""></div>
+
   <div class="ornament-rule"><div class="diamond"></div></div>
   <div id="roll"></div>
   <div id="story"></div>
@@ -314,6 +320,22 @@ function render() {
   $('mp-fill').style.width = (100 * P.mp / P.maxMp) + '%';
   $('mp-num').textContent = P.mp + '/' + P.maxMp;
   $('progress-fill').style.width = ((1 - P.dist / 50) * 100) + '%';
+
+  // 노드 삽화 (img/ 폴더에 파일이 있을 때만 표시)
+  const ill = $('illust'), illImg = $('illust-img');
+  if (node.img) {
+    const src = 'img/' + node.img;
+    if (illImg.getAttribute('src') === src && illImg.complete && illImg.naturalWidth > 0) {
+      ill.style.display = 'block';
+    } else {
+      ill.style.display = 'none';
+      illImg.onload = () => { ill.style.display = 'block'; };
+      illImg.onerror = () => { ill.style.display = 'none'; };
+      illImg.setAttribute('src', src);
+    }
+  } else {
+    ill.style.display = 'none';
+  }
 
   const roll = $('roll');
   roll.textContent = rollText;
