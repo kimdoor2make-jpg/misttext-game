@@ -20,8 +20,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "궁정 마법사의 탑지기",
@@ -37,8 +38,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "수도원의 필사 학자",
@@ -48,14 +50,15 @@ window.STORY_DATA = {
      "sd": {
       "distset": -1,
       "int": 3,
-      "ember": 2
+      "maxmp": 2
      },
      "fd": {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "숲가의 사냥꾼",
@@ -71,8 +74,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "떠도는 유랑 악단",
@@ -88,8 +92,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "몰락한 귀족 가문",
@@ -105,8 +110,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -129,8 +135,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "낡은 주문서를 몰래 베껴 쓰기",
@@ -146,8 +153,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "도서관의 고서 탐독",
@@ -157,14 +165,15 @@ window.STORY_DATA = {
      "sd": {
       "distset": -1,
       "int": 2,
-      "ember": 1
+      "maxmp": 1
      },
      "fd": {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "뒷골목 심부름과 지붕 타기",
@@ -180,8 +189,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "정처 없는 떠돌이 생활",
@@ -196,8 +206,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "축제 무대에서 노래하기",
@@ -213,8 +224,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -238,8 +250,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "탑의 견습 마법사",
@@ -255,8 +268,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "영주청의 필경사",
@@ -272,8 +286,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "숲을 누비는 밀렵꾼",
@@ -289,8 +304,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "주사위 도박꾼",
@@ -306,8 +322,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "선술집의 음유시인",
@@ -323,8 +340,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -347,8 +365,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "revenge",
+     "reqreason": ""
     },
     {
      "t": "금지된 마법서가 부르는 소리",
@@ -364,8 +383,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "grimoire",
+     "reqreason": ""
     },
     {
      "t": "세상의 진실을 향한 갈증",
@@ -375,14 +395,15 @@ window.STORY_DATA = {
      "sd": {
       "distset": -1,
       "int": 1,
-      "ember": 2
+      "maxmp": 2
      },
      "fd": {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "truth",
+     "reqreason": ""
     },
     {
      "t": "내 이름 위에 붙은 수배령",
@@ -398,8 +419,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "wanted",
+     "reqreason": ""
     },
     {
      "t": "떠돌이 점성술사의 예언",
@@ -414,8 +436,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "prophecy",
+     "reqreason": ""
     },
     {
      "t": "더 큰 무대를 향한 꿈",
@@ -430,8 +453,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "stage",
+     "reqreason": ""
     }
    ]
   },
@@ -453,8 +477,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "떠나기 전 등불 아래에서 내 이름을 세 번 되뇐다",
@@ -462,15 +487,16 @@ window.STORY_DATA = {
      "s": "name_rite",
      "f": "name_rite",
      "sd": {
-      "ember": 1,
-      "distset": -1
+      "distset": -1,
+      "luck": 1
      },
      "fd": {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -492,8 +518,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -515,8 +542,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "잿빛 숲 길로 간다",
@@ -531,8 +559,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -547,17 +576,18 @@ window.STORY_DATA = {
      "s": "marsh_success",
      "f": "marsh_fail",
      "sd": {
-      "ember": 2,
       "int": 1,
-      "distset": -1
+      "distset": -1,
+      "mp": 2
      },
      "fd": {
       "hp": -2,
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "위험하다. 제단을 지나쳐 간다",
@@ -572,8 +602,25 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
+    },
+    {
+     "t": "금서에서 본 문양으로 별빛을 끌어내린다 (마력 3)",
+     "check": "",
+     "s": "reason_grimoire",
+     "f": "reason_grimoire",
+     "sd": {
+      "distset": -1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 3,
+     "setreason": "",
+     "reqreason": "grimoire"
     }
    ]
   },
@@ -595,8 +642,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -618,8 +666,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -642,8 +691,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "튕겨낸다",
@@ -659,8 +709,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -683,8 +734,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -706,8 +758,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -729,8 +782,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -745,8 +799,7 @@ window.STORY_DATA = {
      "s": "bell_ring",
      "f": "bell_fail",
      "sd": {
-      "gold": 6,
-      "ember": 2,
+      "gold": 8,
       "distset": -1
      },
      "fd": {
@@ -754,8 +807,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "상인에게서 소금절임 약초를 산다 (금화 5)",
@@ -771,8 +825,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 5,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "종루를 지나 봉화 절벽으로 향한다",
@@ -787,8 +842,41 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
+    },
+    {
+     "t": "물에 잠긴 종루의 오래된 명문을 판독한다",
+     "check": "",
+     "s": "reason_truth",
+     "f": "reason_truth",
+     "sd": {
+      "distset": -1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "truth"
+    },
+    {
+     "t": "뒷골목 시절의 은어로 상인에게 말을 건다",
+     "check": "",
+     "s": "reason_wanted",
+     "f": "reason_wanted",
+     "sd": {
+      "distset": -1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "wanted"
     }
    ]
   },
@@ -810,8 +898,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -833,8 +922,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -856,8 +946,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -879,8 +970,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "힘으로 밀고 지나간다",
@@ -896,8 +988,25 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
+    },
+    {
+     "t": "점성술사가 남긴 예언의 구절을 읊는다",
+     "check": "",
+     "s": "reason_prophecy",
+     "f": "reason_prophecy",
+     "sd": {
+      "distset": -1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "prophecy"
     }
    ]
   },
@@ -920,8 +1029,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -931,7 +1041,7 @@ window.STORY_DATA = {
    "ending": false,
    "choices": [
     {
-     "t": "봉화에 불씨를 바친다 (불씨 3)",
+     "t": "\"첫 항해.\" — 들은 이름을 불러 불을 깨운다",
      "check": "",
      "s": "beacon_lit",
      "f": "beacon_lit",
@@ -942,24 +1052,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 3,
-     "mcost": 0
-    },
-    {
-     "t": "제 피로 불을 먹인다 (생명 4)",
-     "check": "",
-     "s": "beacon_lit",
-     "f": "beacon_lit",
-     "sd": {
-      "hp": -4,
-      "distset": 0
-     },
-     "fd": {
-      "distset": -1
-     },
-     "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -980,8 +1075,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -1002,8 +1098,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -1025,8 +1122,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "벼랑 능선으로 질러간다",
@@ -1044,8 +1142,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -1060,16 +1159,17 @@ window.STORY_DATA = {
      "s": "hunter_named",
      "f": "hunter_blank",
      "sd": {
-      "ember": 2,
       "int": 1,
-      "distset": -1
+      "distset": -1,
+      "luck": 1
      },
      "fd": {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "말없이 고개를 숙이고 지나간다",
@@ -1084,8 +1184,25 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
+    },
+    {
+     "t": "무대에서 부르던 노래로 굳은 기억을 두드린다",
+     "check": "",
+     "s": "reason_stage",
+     "f": "reason_stage",
+     "sd": {
+      "distset": -1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "stage"
     }
    ]
   },
@@ -1108,8 +1225,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -1131,8 +1249,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -1153,8 +1272,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -1175,8 +1295,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -1191,17 +1312,18 @@ window.STORY_DATA = {
      "s": "echo_win",
      "f": "echo_hurt",
      "sd": {
-      "ember": 1,
       "str": 1,
-      "distset": -1
+      "distset": -1,
+      "maxhp": 1
      },
      "fd": {
       "hp": -4,
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "그 기억을 내 것으로 받아들인다",
@@ -1209,17 +1331,34 @@ window.STORY_DATA = {
      "s": "echo_embrace",
      "f": "echo_hurt",
      "sd": {
-      "ember": 2,
       "int": 2,
-      "distset": -1
+      "distset": -1,
+      "luck": 1
      },
      "fd": {
       "hp": -4,
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
+    },
+    {
+     "t": "안개가 짓는 얼굴이 낯익다 — 원수의 얼굴이다",
+     "check": "",
+     "s": "reason_revenge",
+     "f": "reason_revenge",
+     "sd": {
+      "distset": -1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "revenge"
     }
    ]
   },
@@ -1241,8 +1380,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -1264,8 +1404,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -1287,8 +1428,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -1312,26 +1454,29 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 6,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
-     "t": "마른 부싯깃을 산다 (금화 8)",
+     "t": "여행자의 물약을 산다 (금화 8)",
      "check": "",
      "s": "prophet_gate",
      "f": "prophet_gate",
      "sd": {
       "gold": -8,
-      "ember": 4,
       "dist": -6,
-      "distset": -1
+      "distset": -1,
+      "hp": 4,
+      "mp": 4
      },
      "fd": {
       "distset": -1
      },
      "cost": 8,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "눈인사만 하고 계속 오른다",
@@ -1346,8 +1491,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -1370,11 +1516,12 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     },
     {
-     "t": "타오르는 불씨를 장막에 흩뿌린다 (불씨 4)",
+     "t": "마력을 모아 장막을 밀어낸다 (마력 4)",
      "check": "",
      "s": "prophet_pass",
      "f": "prophet_pass",
@@ -1385,8 +1532,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 4,
-     "mcost": 0
+     "mcost": 4,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "장막을 찢고 지나간다",
@@ -1402,8 +1550,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -1425,8 +1574,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -1447,8 +1597,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -1458,7 +1609,7 @@ window.STORY_DATA = {
    "ending": false,
    "choices": [
     {
-     "t": "\"겨울나기.\" — 불씨를 바쳐 불을 먹인다 (불씨 5)",
+     "t": "\"겨울나기.\" — 온 마력을 실어 이름을 부른다 (마력 5)",
      "check": "",
      "s": "ch2_lit",
      "f": "ch2_lit",
@@ -1469,8 +1620,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 5,
-     "mcost": 0
+     "mcost": 5,
+     "setreason": "",
+     "reqreason": ""
     },
     {
      "t": "제 피로 불을 먹인다 (생명 5)",
@@ -1485,8 +1637,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -1507,8 +1660,9 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   },
@@ -1529,8 +1683,162 @@ window.STORY_DATA = {
       "distset": -1
      },
      "cost": 0,
-     "ecost": 0,
-     "mcost": 0
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
+    }
+   ]
+  },
+  {
+   "id": "reason_revenge",
+   "text": "안개는 당신이 가장 잊지 못하는 얼굴을 골랐다. 가족을 해친 그자의 얼굴을.\n 심장이 차갑게 가라앉았다. 당신의 칼은 이번엔 떨리지 않았다.\n 그림자가 갈라지며, 당신은 깨달았다 — 복수는 칼끝이 아니라 걸음에 있다. 아직 갈 길이 남았다.",
+   "ending": false,
+   "choices": [
+    {
+     "t": "원수의 흔적을 좇아 산을 오른다",
+     "check": "",
+     "s": "merchant2",
+     "f": "merchant2",
+     "sd": {
+      "distset": -1,
+      "str": 2,
+      "dist": -6
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
+    }
+   ]
+  },
+  {
+   "id": "reason_grimoire",
+   "text": "손끝이 저절로 움직여 금서의 문양을 그렸다. 별빛이 실처럼 풀려 내려와 손바닥에 고였다.\n 책은 멀리 있어도 당신을 가르치고 있었다.\n — 그리고 아주 잠깐, 책이 당신을 \"읽는\" 기분이 들었다.",
+   "ending": false,
+   "choices": [
+    {
+     "t": "고인 별빛을 삼키고 나아간다",
+     "check": "",
+     "s": "bell",
+     "f": "bell",
+     "sd": {
+      "distset": -1,
+      "mag": 2,
+      "int": 1,
+      "dist": -4
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
+    }
+   ]
+  },
+  {
+   "id": "reason_truth",
+   "text": "이끼를 걷어내자 종루의 초석에 새겨진 명문이 드러났다.\n \"종은 잊힌 것을 위해 울린다. 스스로 잊은 것을 위해서는 울리지 않는다.\"\n 세상의 진실은 이렇게 물밑에 가라앉아, 읽어 줄 사람을 기다리고 있었다.",
+   "ending": false,
+   "choices": [
+    {
+     "t": "명문을 새기고 봉화 절벽으로 향한다",
+     "check": "",
+     "s": "beacon_gate",
+     "f": "beacon_gate",
+     "sd": {
+      "distset": -1,
+      "int": 2,
+      "luck": 1,
+      "dist": -8
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
+    }
+   ]
+  },
+  {
+   "id": "reason_wanted",
+   "text": "당신이 낮게 던진 은어에 상인의 눈썹이 올라갔다.\n \"…이런 데서 옛 동업자 냄새를 맡을 줄이야.\" 그가 좌판 밑에서 따로 싼 꾸러미를 꺼냈다.\n \"수배지 얼굴보다 실물이 낫군. 이건 서비스야. 서로 못 본 걸로 하고.\"",
+   "ending": false,
+   "choices": [
+    {
+     "t": "꾸러미를 챙겨 봉화 절벽으로 향한다",
+     "check": "",
+     "s": "beacon_gate",
+     "f": "beacon_gate",
+     "sd": {
+      "distset": -1,
+      "gold": 5,
+      "hp": 3,
+      "dist": -8
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
+    }
+   ]
+  },
+  {
+   "id": "reason_prophecy",
+   "text": "\"— 바다의 이름이 잊힌 밤, 별을 읽는 자가 대신 답하리라.\"\n 예언의 구절이 입 밖으로 나오자, 수호자의 돌껍질이 미세하게 떨렸다.\n \"…그 목소리를 기다렸다.\" 수호자는 스스로 길을 비켰고, 봉화는 당신의 손길만으로 깨어났다.",
+   "ending": false,
+   "choices": [
+    {
+     "t": "별의 인도 아래 불을 밝힌다",
+     "check": "",
+     "s": "beacon_lit",
+     "f": "beacon_lit",
+     "sd": {
+      "distset": 0,
+      "luck": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
+    }
+   ]
+  },
+  {
+   "id": "reason_stage",
+   "text": "당신은 목을 가다듬고, 축제에서 가장 아꼈던 소절을 불렀다.\n 노인의 손가락이 제멋대로 박자를 맞추기 시작했다. 몸이 기억하는 것은 안개도 쉽게 빼앗지 못한다.\n \"…토르멘. 내 이름은 토르멘이야.\" 노인이 스스로 제 이름을 불렀다. \"산길은 내가 안다. 노래꾼, 따라오게.\"",
+   "ending": false,
+   "choices": [
+    {
+     "t": "노래를 이어 부르며 지름길을 오른다",
+     "check": "",
+     "s": "echo",
+     "f": "echo",
+     "sd": {
+      "distset": -1,
+      "tal": 2,
+      "luck": 1,
+      "dist": -10
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": ""
     }
    ]
   }

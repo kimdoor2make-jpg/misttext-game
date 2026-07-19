@@ -205,8 +205,6 @@
         <div class="stat-cell"><span style="color:var(--gold)">운</span><b id="v-luck">5</b></div>
         <div class="stat-cell"><span style="color:var(--ember)">재능</span><b id="v-tal">5</b></div>
         <div class="stat-cell"><span style="color:var(--gold)">금화</span><b id="v-gold">6</b></div>
-        <div class="stat-cell"><span style="color:var(--ember)">불씨</span><b id="v-ember">4</b></div>
-        <div class="stat-cell" style="visibility:hidden"></div>
       </div>
     </div>
   </header>
@@ -242,7 +240,7 @@ let draftMode = false;
 (function initStory() {
   if (new URLSearchParams(location.search).get('draft') === '1') {
     try {
-      const d = localStorage.getItem('mist_story_draft2');
+      const d = localStorage.getItem('mist_story_draft3');
       if (d) { setNodes(JSON.parse(d)); draftMode = true; }
     } catch (e) {}
   }
@@ -257,16 +255,13 @@ const STAT_COLOR = { str: 'var(--red)', mag: 'var(--blue)', int: 'var(--purple)'
 let P, nodeId, rollText = '', armedIdx = -1, typeTimer = null;
 
 function newGame() {
-  P = { str: 5, mag: 5, int: 5, agi: 5, luck: 5, tal: 5, gold: 6, hp: 12, maxHp: 12, mp: 6, maxMp: 6, ember: 4, dist: 50 };
+  P = { str: 5, mag: 5, int: 5, agi: 5, luck: 5, tal: 5, gold: 6, hp: 12, maxHp: 12, mp: 6, maxMp: 6, dist: 50, reason: '' };
   nodeId = 'cc_parent'; // 인생 선택(부모→청소년기→성인기→집을 나온 이유)부터 시작
   rollText = '';
 }
 
-const BOOST_COST = 2;   // 불씨 보정에 드는 불씨
-const BOOST_BONUS = 15; // 성공확률 가산
-
-function chance(stat, boosted) {
-  return Math.min(95, Math.max(5, 30 + P[stat] * 2.2 + (boosted ? BOOST_BONUS : 0)));
+function chance(stat) {
+  return Math.min(95, Math.max(5, 30 + P[stat] * 2.2));
 }
 
 function applyDelta(d) {
@@ -276,30 +271,25 @@ function applyDelta(d) {
   if (d.hp) P.hp = Math.min(P.maxHp, P.hp + d.hp);
   if (d.mp) P.mp = Math.max(0, Math.min(P.maxMp, P.mp + d.mp));
   if (d.gold) P.gold = Math.max(0, P.gold + d.gold);
-  if (d.ember) P.ember = Math.max(0, P.ember + d.ember);
   for (const k of ['str', 'mag', 'int', 'agi', 'luck', 'tal']) if (d[k]) P[k] += d[k];
   if (d.dist) P.dist = Math.max(0, P.dist + d.dist);
   if (d.distset !== undefined && d.distset >= 0) P.dist = d.distset;
 }
 
-function pick(c, boosted) {
+function pick(c) {
   if (c.cost && P.gold < c.cost) return;
-  if (c.ecost && P.ember < c.ecost) return;
   if (c.mcost && P.mp < c.mcost) return;
-  if (c.ecost) P.ember -= c.ecost;
   if (c.mcost) P.mp -= c.mcost;
+  if (c.setreason) P.reason = c.setreason; // 집을 나온 이유 = 운명 태그
   let next;
   if (!c.check) {
     rollText = '';
     applyDelta(c.sd);
     next = c.s;
   } else {
-    if (boosted && P.ember >= BOOST_COST) P.ember -= BOOST_COST;
-    else boosted = false;
-    const p = chance(c.check, boosted);
+    const p = chance(c.check);
     const ok = Math.random() * 100 < p;
-    const tag = boosted ? ' · 불씨 보정' : '';
-    rollText = (ok ? '판정 성공' : '판정 실패') + `  (${STAT_NAME[c.check]} ${p.toFixed(1)}%${tag})`;
+    rollText = (ok ? '판정 성공' : '판정 실패') + `  (${STAT_NAME[c.check]} ${p.toFixed(1)}%)`;
     applyDelta(ok ? c.sd : c.fd);
     next = ok ? c.s : c.f;
   }
@@ -317,7 +307,6 @@ function render() {
   const node = NODES[nodeId];
   for (const k of ['str', 'mag', 'int', 'agi', 'luck', 'tal']) $('v-' + k).textContent = P[k];
   $('v-gold').textContent = P.gold;
-  $('v-ember').textContent = P.ember;
   $('v-dist').textContent = P.dist;
   $('hp-fill').style.width = (100 * P.hp / P.maxHp) + '%';
   $('hp-num').textContent = P.hp + '/' + P.maxHp;
@@ -334,36 +323,25 @@ function render() {
   const box = $('choices');
   box.innerHTML = '';
   box.classList.add('hidden');
-  node.choices.forEach((c, i) => {
+  const visible = node.choices.filter(c => !c.reqreason || c.reqreason === P.reason);
+  visible.forEach((c, i) => {
     const btn = document.createElement('div');
     btn.className = 'choice';
     btn.tabIndex = 0;
-    const afford = (!c.cost || P.gold >= c.cost) && (!c.ecost || P.ember >= c.ecost) && (!c.mcost || P.mp >= c.mcost);
+    const afford = (!c.cost || P.gold >= c.cost) && (!c.mcost || P.mp >= c.mcost);
     if (!afford) btn.classList.add('disabled');
-    let boosted = false;
-    let inner = `<div class="mark"></div><div><div class="title">${c.t}</div>`;
+    const destiny = c.reqreason ? '<span style="color:var(--gold);font-weight:bold">[운명] </span>' : '';
+    let inner = `<div class="mark"></div><div><div class="title">${destiny}${c.t}</div>`;
     if (c.check) {
-      inner += `<div class="prob"><span class="stat" style="color:${STAT_COLOR[c.check]}">${STAT_NAME[c.check]}</span><span class="prob-val">성공확률 : ${chance(c.check).toFixed(1)} %</span>`;
-      if (afford) inner += `<button class="boost" type="button"${P.ember >= BOOST_COST ? '' : ' disabled'}>불씨 ${BOOST_COST} → +${BOOST_BONUS}%</button>`;
-      inner += '</div>';
+      inner += `<div class="prob"><span class="stat" style="color:${STAT_COLOR[c.check]}">${STAT_NAME[c.check]}</span><span class="prob-val">성공확률 : ${chance(c.check).toFixed(1)} %</span></div>`;
     }
     inner += '</div>';
     btn.innerHTML = inner;
 
-    const boostBtn = btn.querySelector('.boost');
-    if (boostBtn) {
-      boostBtn.addEventListener('click', e => {
-        e.stopPropagation(); // 보정 토글이 선택지 탭으로 번지지 않게
-        boosted = !boosted;
-        boostBtn.classList.toggle('on', boosted);
-        btn.querySelector('.prob-val').textContent = `성공확률 : ${chance(c.check, boosted).toFixed(1)} %`;
-      });
-    }
-
     const activate = () => {
       if (!afford) return;
-      if (armedIdx === i) { pick(c, boosted); return; } // 두 번째 탭: 진행
-      armedIdx = i;                                     // 첫 탭: 강조
+      if (armedIdx === i) { pick(c); return; } // 두 번째 탭: 진행
+      armedIdx = i;                            // 첫 탭: 강조
       [...box.children].forEach((el, j) => el.classList.toggle('armed', j === i));
     };
     btn.addEventListener('click', activate);
@@ -409,12 +387,12 @@ document.querySelectorAll('[data-toast]').forEach(b => {
 
 /* 자동저장 / 이어하기 */
 function saveGame() {
-  try { localStorage.setItem('mist_save2', JSON.stringify({ P, nodeId })); } catch (e) {}
+  try { localStorage.setItem('mist_save3', JSON.stringify({ P, nodeId })); } catch (e) {}
 }
 function loadGame() {
   try {
-    const s = JSON.parse(localStorage.getItem('mist_save2'));
-    if (s && s.P && s.P.str !== undefined && NODES[s.nodeId]) { P = s.P; nodeId = s.nodeId; return true; }
+    const s = JSON.parse(localStorage.getItem('mist_save3'));
+    if (s && s.P && s.P.reason !== undefined && NODES[s.nodeId]) { P = s.P; nodeId = s.nodeId; return true; }
   } catch (e) {}
   return false;
 }
@@ -425,7 +403,7 @@ document.getElementById('btn-reset').addEventListener('click', () => {
   const t = $('toast');
   if (Date.now() - resetArmed < 3000) {
     resetArmed = 0;
-    localStorage.removeItem('mist_save2');
+    localStorage.removeItem('mist_save3');
     newGame();
     render();
     t.textContent = '처음부터 시작합니다';
