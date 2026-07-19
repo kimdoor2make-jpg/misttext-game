@@ -127,8 +127,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "cc_parent.png",
+   "imgprompt": "humble medieval cottage interior at night, family gathered around a hearth fire, warm ember glow, parent silhouettes, a cradle in the corner"
   },
   {
    "id": "cc_youth",
@@ -255,8 +255,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "cc_youth.png",
+   "imgprompt": "medieval village at dusk, a teenager practicing alone outside a wooden fence, wooden sword stuck in ground, scattered books and tools"
   },
   {
    "id": "cc_adult",
@@ -385,8 +385,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "cc_adult.png",
+   "imgprompt": "busy medieval town street, tradespeople at work, mercenary post, scribe desk and tavern signboard along the road"
   },
   {
    "id": "cc_reason",
@@ -512,8 +512,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "cc_reason.png",
+   "imgprompt": "lone traveler quietly closing a wooden door at night, empty moonlit road ahead, small bundle on shoulder, one last look back"
   },
   {
    "id": "forgotten",
@@ -539,8 +539,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "forgotten.png",
+   "imgprompt": "rain-soaked wooden notice board at a war camp, long casualty list on parchment, soldiers walking past without looking"
   },
   {
    "id": "w1_road",
@@ -607,7 +607,7 @@ window.STORY_DATA = {
     }
    ],
    "img": "w1_road.png",
-   "imgprompt": "잿빛 하늘 아래 회색 들판, 긴 피난 행렬의 실루엣, 진창에 빠진 수레, 옅은 안개, 중세 판타지, 수채화풍, 16:9"
+   "imgprompt": "grey ashen plains under overcast sky, long refugee column on a muddy road, ox cart stuck in mud, distant smoke on horizon"
   },
   {
    "id": "w1_help",
@@ -653,8 +653,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_help.png",
+   "imgprompt": "traveler pushing a mud-stuck cart free on a refugee road, grateful old woman reaching out, tired refugees watching"
   },
   {
    "id": "w1_help_fail",
@@ -681,8 +681,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_help_fail.png",
+   "imgprompt": "two soldiers helping a mud-covered traveler push a cart on a rainy road, wry tired smiles"
   },
   {
    "id": "w1_hide",
@@ -709,8 +709,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_hide.png",
+   "imgprompt": "refugee column passing a military checkpoint, hooded figure hidden in the crowd, old man draping a blanket over their shoulders"
   },
   {
    "id": "w1_camp",
@@ -774,8 +774,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_camp.png",
+   "imgprompt": "frontier supply camp at sunset, palisade and tents, bonfires, recruitment officer shouting atop a crate, crowded notice board"
   },
   {
    "id": "w1_revenge",
@@ -802,8 +802,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_revenge.png",
+   "imgprompt": "a hand tracing names on a military roster nailed to a board, torchlight, knuckles white with tension"
   },
   {
    "id": "w1_porter",
@@ -831,8 +831,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_porter.png",
+   "imgprompt": "night supply camp, a porter carrying arrow bundles between tents, soldiers whispering by low fires"
   },
   {
    "id": "w1_role",
@@ -923,8 +923,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_role.png",
+   "imgprompt": "army quartermaster inspecting recruits in a row: spearman with shield, rune stones on a cart, scout cloak, scribe with ledger"
   },
   {
    "id": "w1_night",
@@ -986,8 +986,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_night.png",
+   "imgprompt": "soldiers around a campfire at night passing a water kettle, one newcomer being asked a question, firelit weathered faces"
   },
   {
    "id": "w1_alarm",
@@ -1055,8 +1055,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_alarm.png",
+   "imgprompt": "night raid on a palisade camp, arrows raining from darkness, burning watchtower, soldiers scrambling with torches"
   },
   {
    "id": "w1_stand",
@@ -1082,8 +1082,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_stand.png",
+   "imgprompt": "lone fighter holding the breach of a broken palisade against shadowy attackers, night battle, drifting embers"
   },
   {
    "id": "w1_flank",
@@ -1109,8 +1109,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_flank.png",
+   "imgprompt": "cloaked figure slipping through smoke behind an enemy archer line at night, moment before a surprise strike"
   },
   {
    "id": "w1_wardhold",
@@ -1136,8 +1136,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_wardhold.png",
+   "imgprompt": "mage hands pressed on a cracked glowing ward stone, blue translucent barrier deflecting arrows over cowering refugees"
   },
   {
    "id": "w1_hurt",
@@ -1163,8 +1163,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_hurt.png",
+   "imgprompt": "wounded soldier rising from the mud during a night battle, blurred fighting in the background, gritted teeth"
   },
   {
    "id": "w1_choice",
@@ -1208,8 +1208,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_choice.png",
+   "imgprompt": "night battlefield, burning collapsed watchtower with a trapped young soldier on one side, army banner falling on a hill on the other side"
   },
   {
    "id": "w1_save",
@@ -1237,8 +1237,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_save.png",
+   "imgprompt": "rescuer pulling a young soldier out from under burning timbers, sparks flying, tower collapsing behind"
   },
   {
    "id": "w1_banner",
@@ -1266,8 +1266,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_banner.png",
+   "imgprompt": "warrior raising a fallen army banner upright on a hill at night, soldiers rallying below, wind and embers"
   },
   {
    "id": "w1_feat",
@@ -1294,8 +1294,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_feat.png",
+   "imgprompt": "dawn after battle over a ruined camp, soldiers pointing in awe at one weary figure, defeated enemy champion on the ground"
   },
   {
    "id": "w1_feat_luck",
@@ -1322,8 +1322,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_feat_luck.png",
+   "imgprompt": "chaotic lucky moment in battle, enemy champion knocked out cold by a stumbling recruit, nearby soldiers frozen in surprise"
   },
   {
    "id": "w1_after",
@@ -1367,8 +1367,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_after.png",
+   "imgprompt": "morning mist, ornate command carriage entering a battered camp, red-cloaked officer bowing to a bewildered common soldier"
   },
   {
    "id": "w1_end",
@@ -1394,8 +1394,8 @@ window.STORY_DATA = {
      "reqflag": ""
     }
    ],
-   "img": "",
-   "imgprompt": ""
+   "img": "w1_end.png",
+   "imgprompt": "view through a carriage window of grey plains rolling past, faint reflection of a thoughtful soldier on the glass"
   }
  ]
 };
