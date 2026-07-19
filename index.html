@@ -255,7 +255,7 @@ const STAT_COLOR = { str: 'var(--red)', mag: 'var(--blue)', int: 'var(--purple)'
 let P, nodeId, rollText = '', armedIdx = -1, typeTimer = null;
 
 function newGame() {
-  P = { str: 5, mag: 5, int: 5, agi: 5, luck: 5, tal: 5, gold: 6, hp: 12, maxHp: 12, mp: 6, maxMp: 6, dist: 50, reason: '' };
+  P = { str: 5, mag: 5, int: 5, agi: 5, luck: 5, tal: 5, gold: 6, hp: 12, maxHp: 12, mp: 6, maxMp: 6, dist: 50, reason: '', flags: [] };
   nodeId = 'cc_parent'; // 인생 선택(부모→청소년기→성인기→집을 나온 이유)부터 시작
   rollText = '';
 }
@@ -281,6 +281,7 @@ function pick(c) {
   if (c.mcost && P.mp < c.mcost) return;
   if (c.mcost) P.mp -= c.mcost;
   if (c.setreason) P.reason = c.setreason; // 집을 나온 이유 = 운명 태그
+  if (c.setflag) c.setflag.split(',').forEach(f => { f = f.trim(); if (f && !P.flags.includes(f)) P.flags.push(f); }); // 선택 기억
   let next;
   if (!c.check) {
     rollText = '';
@@ -323,7 +324,8 @@ function render() {
   const box = $('choices');
   box.innerHTML = '';
   box.classList.add('hidden');
-  const visible = node.choices.filter(c => !c.reqreason || c.reqreason === P.reason);
+  const visible = node.choices.filter(c =>
+    (!c.reqreason || c.reqreason === P.reason) && (!c.reqflag || P.flags.includes(c.reqflag)));
   visible.forEach((c, i) => {
     const btn = document.createElement('div');
     btn.className = 'choice';
@@ -392,7 +394,7 @@ function saveGame() {
 function loadGame() {
   try {
     const s = JSON.parse(localStorage.getItem('mist_save3'));
-    if (s && s.P && s.P.reason !== undefined && NODES[s.nodeId]) { P = s.P; nodeId = s.nodeId; return true; }
+    if (s && s.P && Array.isArray(s.P.flags) && NODES[s.nodeId]) { P = s.P; nodeId = s.nodeId; return true; }
   } catch (e) {}
   return false;
 }

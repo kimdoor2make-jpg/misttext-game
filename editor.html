@@ -276,7 +276,7 @@ function renderTree() {
     html += `<div class="snippet">${esc(n.text.slice(0, 42))}…</div>`;
     n.choices.slice(0, 4).forEach(c => {
       const okS = !!byId(c.s), okF = !c.f || !!byId(c.f);
-      html += `<div class="ch">${c.reqreason ? `<span class="tag" style="color:var(--gold)">[운명:${REASON_NAME[c.reqreason] || c.reqreason}]</span> ` : ''}${c.check ? `<span class="tag" style="color:${CHECK_COLOR[c.check]}">[${STAT_NAME[c.check]}]</span> ` : ''}${esc(c.t.slice(0, 20))} <span class="${okS && okF ? 'tag' : 'bad'}">→${esc(c.s)}${!okS || !okF ? ' ?' : ''}</span></div>`;
+      html += `<div class="ch">${c.reqreason ? `<span class="tag" style="color:var(--gold)">[운명:${REASON_NAME[c.reqreason] || c.reqreason}]</span> ` : ''}${c.reqflag ? `<span class="tag" style="color:var(--ember)">[조건:${esc(c.reqflag)}]</span> ` : ''}${c.check ? `<span class="tag" style="color:${CHECK_COLOR[c.check]}">[${STAT_NAME[c.check]}]</span> ` : ''}${esc(c.t.slice(0, 20))} <span class="${okS && okF ? 'tag' : 'bad'}">→${esc(c.s)}${!okS || !okF ? ' ?' : ''}</span></div>`;
     });
     if (n.choices.length > 4) html += `<div class="ch">…선택지 ${n.choices.length}개</div>`;
     card.innerHTML = html;
@@ -388,7 +388,7 @@ function cancelLink() {
 function finishLink(targetId) {
   const src = byId(linkSourceId);
   if (src && targetId !== linkSourceId) {
-    src.choices.push({ t: '새 선택지', check: '', s: targetId, f: targetId, sd: { distset: -1 }, fd: { distset: -1 }, cost: 0, mcost: 0, setreason: '', reqreason: '' });
+    src.choices.push({ t: '새 선택지', check: '', s: targetId, f: targetId, sd: { distset: -1 }, fd: { distset: -1 }, cost: 0, mcost: 0, setreason: '', reqreason: '', setflag: '', reqflag: '' });
     selectedId = src.id;
     markDirty();
     renderInspector();
@@ -560,6 +560,24 @@ function choiceEditor(n, c, i) {
   mkReason(setCol, '운명 부여 (선택 시 태그 저장)', 'setreason');
   mkReason(reqCol, '운명 조건 (일치할 때만 표시)', 'reqreason');
   wrap.appendChild(reasonRow);
+
+  // 선택 기억 플래그 — 게임엔 안 보이고 이후 분기에만 쓰임
+  const flagRow = document.createElement('div');
+  flagRow.className = 'row2';
+  const sfCol = document.createElement('div');
+  const rfCol = document.createElement('div');
+  flagRow.appendChild(sfCol); flagRow.appendChild(rfCol);
+  const mkFlag = (col, label, key, placeholder) => {
+    col.insertAdjacentHTML('beforeend', `<label>${label}</label>`);
+    const inp = document.createElement('input');
+    inp.value = c[key] || '';
+    inp.placeholder = placeholder;
+    inp.addEventListener('input', () => { c[key] = inp.value.trim(); markDirty(); });
+    col.appendChild(inp);
+  };
+  mkFlag(sfCol, '플래그 부여 (쉼표로 여러 개)', 'setflag', '예: saved_soldier');
+  mkFlag(rfCol, '플래그 조건 (있을 때만 표시)', 'reqflag', '예: role_scout');
+  wrap.appendChild(flagRow);
 
   wrap.appendChild(deltaEditor(c.check ? '성공 시 변화' : '변화량', c, 'sd'));
   if (c.check) wrap.appendChild(deltaEditor('실패 시 변화', c, 'fd'));
