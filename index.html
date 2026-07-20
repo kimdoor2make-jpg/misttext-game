@@ -20,13 +20,15 @@
     --surround: #2A2620;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { height: 100%; }
+  html { height: 100%; }
   body {
+    min-height: 100%; /* height 고정 시 flex stretch가 컨테이너 높이를 화면에 잠가 내용이 잘림 */
     background: var(--surround);
     font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
     color: var(--ink);
     display: flex;
     justify-content: center;
+    align-items: flex-start;
   }
   #game {
     width: 100%;
