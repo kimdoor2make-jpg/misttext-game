@@ -443,7 +443,7 @@ function cancelLink() {
 function finishLink(targetId) {
   const src = byId(linkSourceId);
   if (src && targetId !== linkSourceId) {
-    src.choices.push({ t: '새 선택지', check: '', s: targetId, f: targetId, sd: { distset: -1 }, fd: { distset: -1 }, cost: 0, mcost: 0, setreason: '', reqreason: '', setflag: '', reqflag: '', additem: '' });
+    src.choices.push({ t: '새 선택지', check: '', s: targetId, f: targetId, sd: { distset: -1 }, fd: { distset: -1 }, cost: 0, mcost: 0, setreason: '', reqreason: '', setflag: '', reqflag: '', additem: '', reqitem: '', usebonus: '' });
     selectedId = src.id;
     markDirty();
     renderInspector();
@@ -522,7 +522,7 @@ function renderInspector() {
   add.className = 'add-btn';
   add.textContent = '+ 선택지 추가';
   add.addEventListener('click', () => {
-    n.choices.push({ t: '새 선택지', check: '', s: 'intro', f: 'intro', sd: { distset: -1 }, fd: { distset: -1 }, cost: 0, mcost: 0, setreason: '', reqreason: '', setflag: '', reqflag: '', additem: '' });
+    n.choices.push({ t: '새 선택지', check: '', s: 'intro', f: 'intro', sd: { distset: -1 }, fd: { distset: -1 }, cost: 0, mcost: 0, setreason: '', reqreason: '', setflag: '', reqflag: '', additem: '', reqitem: '', usebonus: '' });
     markDirty();
     renderInspector();
   });
@@ -672,6 +672,22 @@ function choiceEditor(n, c, i) {
   itemInp.placeholder = '예: 아버지의 낡은 대장 망치';
   itemInp.addEventListener('input', () => { c.additem = itemInp.value; markDirty(); });
   wrap.appendChild(itemInp);
+
+  // 장비 조건 — 이 아이템을 가졌을 때만 선택지 표시
+  wrap.insertAdjacentHTML('beforeend', '<label>장비 조건 (가진 아이템 중 하나면 표시, 쉼표=OR)</label>');
+  const reqItemInp = document.createElement('input');
+  reqItemInp.value = c.reqitem || '';
+  reqItemInp.placeholder = '예: 위조한 통행증';
+  reqItemInp.addEventListener('input', () => { c.reqitem = reqItemInp.value.trim(); markDirty(); });
+  wrap.appendChild(reqItemInp);
+
+  // 장비 판정 보너스 — 아이템 소지 시 이 판정 성공확률에 가산
+  wrap.insertAdjacentHTML('beforeend', '<label>장비 판정 보너스 (아이템명:숫자, 여러 개는 ; 로 구분)</label>');
+  const useBonusInp = document.createElement('input');
+  useBonusInp.value = c.usebonus || '';
+  useBonusInp.placeholder = '예: 잘 손질된 사냥칼:15';
+  useBonusInp.addEventListener('input', () => { c.usebonus = useBonusInp.value.trim(); markDirty(); });
+  wrap.appendChild(useBonusInp);
 
   wrap.appendChild(deltaEditor(c.check ? '성공 시 변화' : '변화량', c, 'sd'));
   if (c.check) wrap.appendChild(deltaEditor('실패 시 변화', c, 'fd'));

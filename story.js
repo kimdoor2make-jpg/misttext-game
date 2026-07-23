@@ -27,7 +27,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "아버지의 낡은 대장 망치",
-     "lead": "대장간의 열기와 쇠 두드리는 소리가 당신의 자장가였다. 남들보다 이른 나이에 팔뚝에 근육이 앉았다."
+     "lead": "대장간의 열기와 쇠 두드리는 소리가 당신의 자장가였다. 남들보다 이른 나이에 팔뚝에 근육이 앉았다.",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "궁정 마법사의 탑지기",
@@ -50,7 +52,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "마력 잔재가 밴 지팡이 조각",
-     "lead": "탑 꼭대기의 밤은 별보다 마법 불빛이 더 밝았다. 당신은 옹알이보다 먼저 주문의 억양을 흉내 냈다."
+     "lead": "탑 꼭대기의 밤은 별보다 마법 불빛이 더 밝았다. 당신은 옹알이보다 먼저 주문의 억양을 흉내 냈다.",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "수도원의 필사 학자",
@@ -73,7 +77,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "여백까지 주석이 빼곡한 고서",
-     "lead": "수도원의 양피지 냄새 속에서 자랐다. 당신에게 글자는 그림이자 유일한 친구였다."
+     "lead": "수도원의 양피지 냄새 속에서 자랐다. 당신에게 글자는 그림이자 유일한 친구였다.",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "숲가의 사냥꾼",
@@ -95,7 +101,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "잘 손질된 사냥칼",
-     "lead": "숲의 소리를 읽는 법을 걷기보다 먼저 배웠다. 당신의 발은 마른 가지 하나 밟지 않았다."
+     "lead": "숲의 소리를 읽는 법을 걷기보다 먼저 배웠다. 당신의 발은 마른 가지 하나 밟지 않았다.",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "떠도는 유랑 악단",
@@ -118,7 +126,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "칠이 벗겨진 낡은 류트",
-     "lead": "수레 위에서 잠들고 낯선 마을에서 눈을 떴다. 박수와 야유를 함께 들으며 자랐다."
+     "lead": "수레 위에서 잠들고 낯선 마을에서 눈을 떴다. 박수와 야유를 함께 들으며 자랐다.",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "cc_parent.png",
@@ -149,7 +159,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "이 빠진 연습용 검",
-     "lead": "울타리 밖 공터에 흘린 땀만큼, 당신의 팔은 단단해지고 검은 손에 익었다."
+     "lead": "울타리 밖 공터에 흘린 땀만큼, 당신의 팔은 단단해지고 검은 손에 익었다.",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "낡은 주문서를 몰래 베껴 쓰기",
@@ -171,7 +183,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "반쯤 그을린 주문 필사본",
-     "lead": "촛불 아래 몰래 베낀 문양들이 손끝에 새겨졌다. 마력이 당신의 말을 알아듣기 시작했다."
+     "lead": "촛불 아래 몰래 베낀 문양들이 손끝에 새겨졌다. 마력이 당신의 말을 알아듣기 시작했다.",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "도서관의 고서 탐독",
@@ -194,7 +208,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "여러 번 접힌 낡은 지도",
-     "lead": "먼지 쌓인 책장 사이에서, 당신은 세상을 책으로 먼저 여행했다."
+     "lead": "먼지 쌓인 책장 사이에서, 당신은 세상을 책으로 먼저 여행했다.",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "뒷골목 심부름과 지붕 타기",
@@ -216,7 +232,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "소매치기용 가는 단검",
-     "lead": "골목의 그늘과 지붕의 경사가 당신의 놀이터였다. 아무도 당신이 지나간 것을 눈치채지 못했다."
+     "lead": "골목의 그늘과 지붕의 경사가 당신의 놀이터였다. 아무도 당신이 지나간 것을 눈치채지 못했다.",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "축제 무대에서 노래하기",
@@ -239,7 +257,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "관객이 던져 준 은화 주머니",
-     "lead": "무대의 떨림과 관객의 눈빛에 중독됐다. 당신의 목소리는 사람을 붙드는 법을 익혔다."
+     "lead": "무대의 떨림과 관객의 눈빛에 중독됐다. 당신의 목소리는 사람을 붙드는 법을 익혔다.",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "cc_youth.png",
@@ -271,7 +291,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "수비대 지급 장창",
-     "lead": "국경의 진창에서 창을 쥐고 밥을 벌었다. 살아남는 법과, 살아남지 못하는 이들을 지켜보는 법을 배웠다."
+     "lead": "국경의 진창에서 창을 쥐고 밥을 벌었다. 살아남는 법과, 살아남지 못하는 이들을 지켜보는 법을 배웠다.",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "탑의 견습 마법사",
@@ -294,7 +316,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "견습 인장이 박힌 로브",
-     "lead": "탑의 서열 맨 아래에서 잔심부름과 주문을 함께 익혔다. 로브 자락엔 늘 잉크와 재가 묻어 있었다."
+     "lead": "탑의 서열 맨 아래에서 잔심부름과 주문을 함께 익혔다. 로브 자락엔 늘 잉크와 재가 묻어 있었다.",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "영주청의 필경사",
@@ -316,7 +340,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "봉랍과 인장 세트",
-     "lead": "영주청의 차가운 책상에서 남의 운명을 대신 받아 적었다. 잉크 밑에 감춰진 것을 읽는 눈이 생겼다."
+     "lead": "영주청의 차가운 책상에서 남의 운명을 대신 받아 적었다. 잉크 밑에 감춰진 것을 읽는 눈이 생겼다.",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "주사위를 굴리는 도박꾼",
@@ -338,7 +364,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "무게가 묘하게 치우친 주사위 한 쌍",
-     "lead": "주사위와 함께 뜨고 지는 나날이었다. 운을 믿지 않으면서도, 운으로 먹고살았다."
+     "lead": "주사위와 함께 뜨고 지는 나날이었다. 운을 믿지 않으면서도, 운으로 먹고살았다.",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "선술집의 음유시인",
@@ -360,7 +388,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "잘 길든 여행용 류트",
-     "lead": "선술집마다 당신의 노래가 남았다. 사람들이 어떤 이야기를 사랑하는지 당신은 누구보다 잘 알았다."
+     "lead": "선술집마다 당신의 노래가 남았다. 사람들이 어떤 이야기를 사랑하는지 당신은 누구보다 잘 알았다.",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "cc_adult.png",
@@ -391,7 +421,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "원수의 인상착의를 적은 쪽지",
-     "lead": "가슴에서 지운 적 없는 이름 하나를 품고, 당신은 문을 닫았다."
+     "lead": "가슴에서 지운 적 없는 이름 하나를 품고, 당신은 문을 닫았다.",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "금지된 마법서가 부르는 소리",
@@ -413,7 +445,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "찢겨 나온 마법서 한 장",
-     "lead": "당신을 부르는 책의 속삭임을 따라, 익숙한 화롯가를 등졌다."
+     "lead": "당신을 부르는 책의 속삭임을 따라, 익숙한 화롯가를 등졌다.",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "세상의 진실을 향한 갈증",
@@ -435,7 +469,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "봉인된 밀서",
-     "lead": "누구도 말해 주지 않는 것을 알고 싶어서, 당신은 길 위에 섰다."
+     "lead": "누구도 말해 주지 않는 것을 알고 싶어서, 당신은 길 위에 섰다.",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "내 이름 위에 붙은 수배령",
@@ -458,7 +494,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "위조한 통행증",
-     "lead": "이름이 수배지에 오른 그 밤, 당신은 이름을 두고 떠나기로 했다."
+     "lead": "이름이 수배지에 오른 그 밤, 당신은 이름을 두고 떠나기로 했다.",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "더 큰 무대를 향한 꿈",
@@ -480,7 +518,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "첫 무대의 빛바랜 초대장",
-     "lead": "이 좁은 마을이 담기엔 당신의 꿈이 너무 컸다. 더 큰 무대가 어딘가에서 기다리고 있었다."
+     "lead": "이 좁은 마을이 담기엔 당신의 꿈이 너무 컸다. 더 큰 무대가 어딘가에서 기다리고 있었다.",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "cc_reason.png",
@@ -509,7 +549,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "forgotten.png",
@@ -540,7 +582,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "갈 길이 멀다. 행렬을 앞질러 걷는다",
@@ -561,7 +605,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "병사들의 검문을 피해 행렬 한가운데로 숨어든다",
@@ -582,7 +628,9 @@ window.STORY_DATA = {
      "setflag": "hid_in_crowd",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_road.png",
@@ -612,7 +660,9 @@ window.STORY_DATA = {
      "setflag": "told_name",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "\"지나가던 사람입니다.\" — 이름 없이 떠난다",
@@ -633,7 +683,9 @@ window.STORY_DATA = {
      "setflag": "stayed_nameless",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_help.png",
@@ -663,7 +715,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_help_fail.png",
@@ -693,7 +747,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_hide.png",
@@ -723,7 +779,32 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    },
+    {
+     "t": "위조한 통행증을 내밀어 신분을 숨기고 서명한다",
+     "check": "",
+     "s": "w1_role",
+     "f": "w1_role",
+     "sd": {
+      "distset": -1,
+      "gold": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "hidden_identity",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "위조한 통행증",
+     "usebonus": ""
     },
     {
      "t": "서명 대신 짐꾼 일을 구한다 — 전쟁의 가장자리에 남는다",
@@ -744,7 +825,9 @@ window.STORY_DATA = {
      "setflag": "no_sign",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "명부에서 그자의 부대를 찾는다",
@@ -764,7 +847,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_camp.png",
@@ -794,7 +879,9 @@ window.STORY_DATA = {
      "setflag": "revenge_lead",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_revenge.png",
@@ -825,7 +912,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_porter.png",
@@ -857,7 +946,9 @@ window.STORY_DATA = {
      "setflag": "role_blade",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "전장 술사 보조 — 부적과 결계 나르기",
@@ -880,7 +971,9 @@ window.STORY_DATA = {
      "setflag": "role_ward",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "정찰조 — 잿날의 안개 속을 걷는 눈",
@@ -903,7 +996,9 @@ window.STORY_DATA = {
      "setflag": "role_scout",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "종군 서기 — 명령서와 전사자 명단을 쓰는 손",
@@ -925,7 +1020,9 @@ window.STORY_DATA = {
      "setflag": "role_scribe",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_role.png",
@@ -954,7 +1051,9 @@ window.STORY_DATA = {
      "setflag": "answered_true",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "\"영웅이 되러 왔지.\" — 사람들이 좋아할 대답을 한다",
@@ -974,7 +1073,9 @@ window.STORY_DATA = {
      "setflag": "answered_hero",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "대답 대신 불씨만 바라본다",
@@ -994,7 +1095,9 @@ window.STORY_DATA = {
      "setflag": "answered_silence",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_night.png",
@@ -1025,7 +1128,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": "이 빠진 연습용 검:10;수비대 지급 장창:15;아버지의 낡은 대장 망치:10"
     },
     {
      "t": "연기와 어둠을 틈타 적의 측면으로 돌아간다",
@@ -1047,7 +1152,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": "소매치기용 가는 단검:12;잘 손질된 사냥칼:15"
     },
     {
      "t": "무너지는 결계석에 손을 얹고 마력을 쏟아붓는다 (마력 3)",
@@ -1069,7 +1176,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": "마력 잔재가 밴 지팡이 조각:12;견습 인장이 박힌 로브:15;찢겨 나온 마법서 한 장:10"
     }
    ],
    "img": "w1_alarm.png",
@@ -1098,7 +1207,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_stand.png",
@@ -1127,7 +1238,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_flank.png",
@@ -1156,7 +1269,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_wardhold.png",
@@ -1185,7 +1300,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_hurt.png",
@@ -1214,7 +1331,9 @@ window.STORY_DATA = {
      "setflag": "saved_soldier",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "언덕으로 달려가 군기를 지킨다",
@@ -1234,7 +1353,9 @@ window.STORY_DATA = {
      "setflag": "saved_banner",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_choice.png",
@@ -1265,7 +1386,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_save.png",
@@ -1296,7 +1419,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_banner.png",
@@ -1326,7 +1451,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_feat.png",
@@ -1356,7 +1483,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_feat_luck.png",
@@ -1385,7 +1514,9 @@ window.STORY_DATA = {
      "setflag": "ride_proud",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "마차에 오르며, 부풀려진 이야기를 한 번 정정해 본다",
@@ -1405,7 +1536,9 @@ window.STORY_DATA = {
      "setflag": "ride_honest",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_after.png",
@@ -1434,7 +1567,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w1_end.png",
@@ -1464,7 +1599,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "\"그 이야기, 절반은 사실이 아니오.\" — 한 번 더 정정을 시도한다",
@@ -1485,7 +1622,9 @@ window.STORY_DATA = {
      "setflag": "honest_twice",
      "reqflag": "ride_honest",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_intro.png",
@@ -1515,7 +1654,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_honest.png",
@@ -1545,7 +1686,9 @@ window.STORY_DATA = {
      "setflag": "portrait_fake",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "\"닮게 고쳐 주시오.\" — 화가와 마주 앉는다",
@@ -1565,7 +1708,9 @@ window.STORY_DATA = {
      "setflag": "portrait_true",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_portrait.png",
@@ -1596,7 +1741,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_portrait_fix.png",
@@ -1626,7 +1773,9 @@ window.STORY_DATA = {
      "setflag": "cheered_lie",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "노래에 없는 것 — 그날 망루 아래의 비명을 기억한다",
@@ -1646,7 +1795,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "saved_soldier",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "깃발 장면만은 진짜다. 그런데 왜 이토록 낯선가",
@@ -1666,7 +1817,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "saved_banner",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "시인의 류트를 빌려, 내 입으로 그날 밤을 부른다",
@@ -1687,7 +1840,9 @@ window.STORY_DATA = {
      "setflag": "took_stage",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_recital.png",
@@ -1718,7 +1873,9 @@ window.STORY_DATA = {
      "setflag": "bard_verse",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_rec_soldier.png",
@@ -1749,7 +1906,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_rec_banner.png",
@@ -1779,7 +1938,9 @@ window.STORY_DATA = {
      "setflag": "sang_truth",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_stage_true.png",
@@ -1809,7 +1970,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_stage_flop.png",
@@ -1838,7 +2001,9 @@ window.STORY_DATA = {
      "setflag": "faction_noble",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "야전 지휘관들의 회의로 간다",
@@ -1858,7 +2023,9 @@ window.STORY_DATA = {
      "setflag": "faction_field",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "병사들의 술자리로 간다",
@@ -1878,7 +2045,9 @@ window.STORY_DATA = {
      "setflag": "faction_people",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_faction.png",
@@ -1909,7 +2078,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_noble.png",
@@ -1941,7 +2112,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_field.png",
@@ -1973,7 +2146,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_people.png",
@@ -2004,7 +2179,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "부적 공정을 조용히 눈에 담아 둔다",
@@ -2026,7 +2203,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "사슬 서고 안쪽 — 낯익은 장정(裝幀)이 보인다 (마력 3)",
@@ -2046,7 +2225,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_armory.png",
@@ -2076,7 +2257,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_spear_ok.png",
@@ -2106,7 +2289,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_spear_fail.png",
@@ -2137,7 +2322,9 @@ window.STORY_DATA = {
      "setflag": "grimoire_page",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_grim.png",
@@ -2166,7 +2353,9 @@ window.STORY_DATA = {
      "setflag": "speech_script",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "대본을 접고, 내 말로 이야기한다",
@@ -2187,7 +2376,9 @@ window.STORY_DATA = {
      "setflag": "speech_own_try",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "대본에서 거짓말 한 줄만 조용히 빼고 읽는다",
@@ -2207,7 +2398,9 @@ window.STORY_DATA = {
      "setflag": "speech_edit",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_speech.png",
@@ -2237,7 +2430,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_script.png",
@@ -2268,7 +2463,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_script_edit.png",
@@ -2298,7 +2495,9 @@ window.STORY_DATA = {
      "setflag": "speech_own",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_ownwords.png",
@@ -2328,7 +2527,9 @@ window.STORY_DATA = {
      "setflag": "speech_stumble",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_stumble.png",
@@ -2358,7 +2559,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "문 두드리는 소리 — 낯익은 앳된 얼굴이 서 있다",
@@ -2378,7 +2581,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "saved_soldier",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     },
     {
      "t": "소포가 하나 와 있다 — 진창의 그 노파에게서",
@@ -2398,7 +2603,9 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "told_name",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_night.png",
@@ -2429,7 +2636,9 @@ window.STORY_DATA = {
      "setflag": "squire",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_boy.png",
@@ -2460,7 +2669,9 @@ window.STORY_DATA = {
      "setflag": "scarf",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
    "img": "w2_letter.png",
@@ -2468,7 +2679,707 @@ window.STORY_DATA = {
   },
   {
    "id": "w2_orders",
-   "text": "이레째 새벽, 출정 명령이 내려왔다.\n 동부 전선 — 잿날보다 더 동쪽. 명령서 말미에는 참모의 급한 글씨가 덧붙어 있었다.\n 「카렐도 \"영웅\"을 세웠다 합니다. \"재의 기사\"라고. …각하의 이야기와 놈들의 이야기가, 곧 마주칠 겁니다.」\n\n — 2장 「만들어지는 영웅」 끝. 3장 「거울 전선」 준비 중 —",
+   "text": "이레째 새벽, 출정 명령이 내려왔다.\n 동부 전선 — 잿날보다 더 동쪽. 명령서 말미에는 참모의 급한 글씨가 덧붙어 있었다.\n 「카렐도 \"영웅\"을 세웠다 합니다. \"재의 기사\"라고. …각하의 이야기와 놈들의 이야기가, 곧 마주칠 겁니다.」\n\n — 2장 「만들어지는 영웅」 끝 —",
+   "ending": false,
+   "choices": [
+    {
+     "t": "동부 전선으로 — 3장 「거울 전선」",
+     "check": "",
+     "s": "w3_intro",
+     "f": "w3_intro",
+     "sd": {
+      "distset": 50
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    }
+   ],
+   "img": "w2_orders.png",
+   "imgprompt": "dawn light on a desk with sealed marching orders, window facing the eastern horizon, armor stand with a rough scarf draped over it"
+  },
+  {
+   "id": "w3_intro",
+   "text": "이레의 행군 끝에 동부 전선에 닿았다. 후방 도시의 깃발과 노래는 여기까지 오지 못했다.\n 여기에는 진창과 참호, 그리고 이름 없이 죽는 사람들뿐이었다. 발크루아에서 \"영웅\"이던 당신은, 이 진흙탕에서는 그저 새로 온 지휘관 하나였다.\n 잿빛 하늘 아래, 카렐군의 진지가 안개 너머로 어렴풋했다.",
+   "ending": false,
+   "choices": [
+    {
+     "t": "전선 야영지로 들어선다",
+     "check": "",
+     "s": "w3_camp",
+     "f": "w3_camp",
+     "sd": {
+      "distset": -1,
+      "dist": -6
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    }
+   ],
+   "img": "w3_intro.png",
+   "imgprompt": "grim eastern warfront at dawn, endless muddy trenches and broken palisades under ash-grey sky, distant artillery smoke, a lone armored figure arriving"
+  },
+  {
+   "id": "w3_camp",
+   "text": "야영지의 병사들이 당신을 훑어보았다. 그 눈빛에는 노래에 대한 환호도, 초상화에 대한 경외도 없었다.\n \"또 후방에서 온 나리인가.\" 누군가 낮게 뇌까렸다.\n 이곳에서 당신의 이야기는 아무것도 사 주지 못한다. 처음부터 다시 얻어야 했다 — 이번엔 진짜를.",
+   "ending": false,
+   "choices": [
+    {
+     "t": "지휘 천막에서 야전 지휘관들과 작전을 다듬는다",
+     "check": "",
+     "s": "w3_recon",
+     "f": "w3_recon",
+     "sd": {
+      "distset": -1,
+      "int": 1,
+      "dist": -6
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "w3_trusted",
+     "reqflag": "faction_field",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    },
+    {
+     "t": "시종이 된 소년병이 건넨 전선 지도를 함께 읽는다",
+     "check": "",
+     "s": "w3_recon",
+     "f": "w3_recon",
+     "sd": {
+      "distset": -1,
+      "int": 1,
+      "dist": -6
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "",
+     "reqflag": "squire",
+     "additem": "소년병이 그린 전선 약도",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    },
+    {
+     "t": "말없이 병사들 사이를 걸으며 전선을 익힌다",
+     "check": "",
+     "s": "w3_recon",
+     "f": "w3_recon",
+     "sd": {
+      "distset": -1,
+      "agi": 1,
+      "dist": -6
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    }
+   ],
+   "img": "w3_camp.png",
+   "imgprompt": "frontline war camp in mud, weary soldiers eyeing a newly arrived commander, torn tents and stacked crates, cold grey light"
+  },
+  {
+   "id": "w3_recon",
+   "text": "사흘째, 무인지대 너머에서 이상한 소문이 돌았다.\n 카렐군이 저희의 \"영웅\"을 이 전선에 세웠다는 것이다. 잿빛 갑옷의 기사 — 그들은 그를 \"재의 기사\"라 불렀다.\n 그리고 오늘 새벽, 그가 홀로 무인지대 한복판에 나와 섰다. 공격도 아니고 후퇴도 아닌 채, 그저 이쪽을 바라보며.",
+   "ending": false,
+   "choices": [
+    {
+     "t": "직접 무인지대로 정찰을 나간다",
+     "check": "agi",
+     "s": "w3_sight",
+     "f": "w3_ambush",
+     "sd": {
+      "distset": -1,
+      "agi": 1
+     },
+     "fd": {
+      "distset": -1,
+      "hp": -4
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": "잘 손질된 사냥칼:12;소매치기용 가는 단검:12;수비대 지급 장창:10"
+    },
+    {
+     "t": "망원경으로 그를 오래 관찰한다",
+     "check": "",
+     "s": "w3_sight",
+     "f": "w3_sight",
+     "sd": {
+      "distset": -1,
+      "int": 1,
+      "dist": -4
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    }
+   ],
+   "img": "w3_recon.png",
+   "imgprompt": "no mans land seen through fog, a single tall enemy knight in ash-black armor standing motionless between the trench lines, ravens overhead"
+  },
+  {
+   "id": "w3_ambush",
+   "text": "포탄 구덩이 사이를 기던 당신을 카렐군 저격조가 놓치지 않았다.\n 흙이 튀고, 무언가 옆구리를 스쳤다. 당신은 구덩이 바닥에 처박혀 숨을 골랐다.\n 고개를 들었을 때 — 잿빛 갑옷의 기사가, 저격을 멈추라는 듯 손을 들어 올리고 있었다.",
+   "ending": false,
+   "choices": [
+    {
+     "t": "피를 누르며 그를 마주 본다",
+     "check": "",
+     "s": "w3_sight",
+     "f": "w3_sight",
+     "sd": {
+      "distset": -1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    }
+   ],
+   "img": "w3_ambush.png",
+   "imgprompt": "soldier caught in a shell crater under crossfire in no mans land, mud and barbed obstacles, tense survival"
+  },
+  {
+   "id": "w3_sight",
+   "text": "가까이서 본 그는 거인이 아니었다. 노래 속 괴물도 아니었다.\n 지친 어깨, 낡은 갑옷, 그리고 — 당신과 똑같이, 남이 씌워 준 문장(紋章)을 단 사람이었다.\n 그가 창을 땅에 꽂고, 빈손을 들어 보였다. 이야기하자는 신호였다.",
+   "ending": false,
+   "choices": [
+    {
+     "t": "무기를 내려놓고 마주 걸어 나간다",
+     "check": "",
+     "s": "w3_meet",
+     "f": "w3_meet",
+     "sd": {
+      "distset": -1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "met_unarmed",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    },
+    {
+     "t": "칼자루를 쥔 채 경계하며 다가간다",
+     "check": "",
+     "s": "w3_meet",
+     "f": "w3_meet",
+     "sd": {
+      "distset": -1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "met_armed",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    }
+   ],
+   "img": "w3_sight.png",
+   "imgprompt": "two lone warriors facing each other across a misty no mans land, one in ash-black armor lowering his weapon, tense stillness"
+  },
+  {
+   "id": "w3_meet",
+   "text": "그가 투구를 벗었다. 평범한 얼굴, 흉터 몇 개, 그리고 너무 많은 것을 본 눈.\n \"카렐의 재의 기사.\" 그가 제 가슴의 문장을 툭 쳤다. \"…라고 그들이 부르지. 원래 이름은 따로 있었는데, 요즘은 잘 기억나지 않아.\"\n 그가 당신을 똑바로 보았다. \"너도 그렇지? 브란의 영웅 나리. 네 무용담, 우리 진영에서도 부르더군. 절반은 네가 하지 않은 일이겠지.\"",
+   "ending": false,
+   "choices": [
+    {
+     "t": "\"그날 나는 깃발 대신 사람을 골랐다.\" — 진실을 말한다",
+     "check": "",
+     "s": "w3_reveal",
+     "f": "w3_reveal",
+     "sd": {
+      "distset": -1,
+      "luck": 1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "told_mirror",
+     "reqflag": "saved_soldier",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    },
+    {
+     "t": "\"광장에서, 나는 내 입으로 진실을 말하려 했다.\"",
+     "check": "",
+     "s": "w3_reveal",
+     "f": "w3_reveal",
+     "sd": {
+      "distset": -1,
+      "luck": 1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "told_mirror",
+     "reqflag": "speech_own",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    },
+    {
+     "t": "\"…나도 내 이름이 잘 기억나지 않는다.\"",
+     "check": "",
+     "s": "w3_reveal",
+     "f": "w3_reveal",
+     "sd": {
+      "distset": -1,
+      "int": 1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    }
+   ],
+   "img": "w3_meet.png",
+   "imgprompt": "ash-armored knight removing his helmet in no mans land revealing an ordinary tired face, facing the protagonist, grey fog, quiet gravity"
+  },
+  {
+   "id": "w3_reveal",
+   "text": "그가 탄약 상자에 걸터앉으며 웃었다. 웃음에 온기는 없었다.\n \"웃기지 않아? 우리 둘을 만든 게 같은 손이라는 거 말이야. 너희 사령부, 우리 사령부 — 위로 거슬러 올라가면 결국 같은 지갑에서 만나거든.\"\n \"영웅은 전쟁을 팔기 위한 간판이야. 나도, 너도. 간판이 낡으면 갈아 치우지. …그 전에, 우리가 먼저 알아 버리면 어떻게 될까?\"",
+   "ending": false,
+   "choices": [
+    {
+     "t": "봉인된 밀서를 꺼내 그의 정보와 대조한다",
+     "check": "",
+     "s": "w3_truth",
+     "f": "w3_truth",
+     "sd": {
+      "distset": -1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "truth",
+     "setflag": "",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    },
+    {
+     "t": "\"이 전선의 브란측 지휘관 — 그자에 대해 아는 게 있나?\"",
+     "check": "",
+     "s": "w3_revenge",
+     "f": "w3_revenge",
+     "sd": {
+      "distset": -1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "revenge",
+     "setflag": "",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    },
+    {
+     "t": "찢어진 마법서 페이지를 내밀며 \"이것도 그들이 녹이려던 거다\"",
+     "check": "",
+     "s": "w3_grimoire3",
+     "f": "w3_grimoire3",
+     "sd": {
+      "distset": -1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "",
+     "reqflag": "grimoire_page",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    },
+    {
+     "t": "\"그래서 — 우리가 뭘 할 수 있지?\"",
+     "check": "",
+     "s": "w3_crossroad",
+     "f": "w3_crossroad",
+     "sd": {
+      "distset": -1,
+      "int": 1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    }
+   ],
+   "img": "w3_reveal.png",
+   "imgprompt": "two disillusioned soldiers sitting on ammunition crates in no mans land talking as equals, helmets set aside, grey overcast, somber camaraderie"
+  },
+  {
+   "id": "w3_truth",
+   "text": "당신이 집을 나서며 품은 밀서와, 그가 카렐 사령부에서 빼돌린 장부가 한자리에서 만났다.\n 두 종이가 가리키는 곳은 하나였다 — \"재의 상단.\" 양국 왕실 모두에게 전쟁 자금을 빌려준 채권자. 전쟁이 길어질수록 이자가 불어나고, 국경선은 그들의 담보였다.\n \"진실을 찾아 집을 나섰다고 했지.\" 그가 나직이 말했다. \"여기 있어. 이 전쟁엔 이기는 나라가 없어. 버는 건 상단뿐이야.\"",
+   "ending": false,
+   "choices": [
+    {
+     "t": "장부를 옮겨 적어 품에 넣는다",
+     "check": "",
+     "s": "w3_crossroad",
+     "f": "w3_crossroad",
+     "sd": {
+      "distset": -1,
+      "int": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "knows_truth",
+     "reqflag": "",
+     "additem": "재의 상단 부채 장부 사본",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    }
+   ],
+   "img": "w3_truth.png",
+   "imgprompt": "two soldiers comparing a sealed letter and a ledger by lantern light in a trench dugout, revealing names and debts, tense discovery"
+  },
+  {
+   "id": "w3_revenge",
+   "text": "그의 표정이 굳었다. \"그자라면 안다. 브란 동부 지휘관 — 양쪽 진영에 정보를 파는 자지. 우리 쪽 매복도 그자가 흘린 거였어. 내 부하 열둘이 그 값이었다.\"\n 당신의 가족을 앗아 가고도 훈장을 받은 그 이름이, 지금 이 전선의 아군 지휘 천막에 앉아 있었다. 손을 뻗으면 닿을 곳에.\n \"복수하러 왔나?\" 그가 물었다. \"…그럼 우리 목적이 하나 겹치는군.\"",
+   "ending": false,
+   "choices": [
+    {
+     "t": "\"그자는 내가 끝낸다.\" — 이를 악문다",
+     "check": "",
+     "s": "w3_crossroad",
+     "f": "w3_crossroad",
+     "sd": {
+      "distset": -1,
+      "str": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "revenge_target",
+     "reqflag": "",
+     "additem": "원수의 이중 첩보 증거",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    }
+   ],
+   "img": "w3_revenge.png",
+   "imgprompt": "ash knight pointing across the trenches toward a distant banner tent, protagonist tense with recognition, cold vengeful atmosphere"
+  },
+  {
+   "id": "w3_grimoire3",
+   "text": "그이 찢긴 페이지를 보더니 눈을 크게 떴다. \"…그 문양. 우리 쪽 제9 병기고에서도 똑같은 걸 녹이고 있어.\"\n \"양쪽이 같은 책을 찢어 부적을 만들고 있는 거야. 원래 한 권이었던 걸.\" 그가 페이지를 조심스레 돌려주었다. \"책이 무슨 말을 하려는지, 나도 늘 궁금했어.\"\n 손끝의 문양이, 마치 짝을 알아본 듯 희미하게 데워졌다.",
+   "ending": false,
+   "choices": [
+    {
+     "t": "페이지를 갈무리하고 이야기를 잇는다",
+     "check": "",
+     "s": "w3_crossroad",
+     "f": "w3_crossroad",
+     "sd": {
+      "distset": -1,
+      "mag": 2
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "grimoire_kin",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    }
+   ],
+   "img": "w3_grimoire3.png",
+   "imgprompt": "torn glowing grimoire page held between two soldiers in a trench, faint magical rune light on their faces, secret understanding"
+  },
+  {
+   "id": "w3_crossroad",
+   "text": "안개가 옅어지고 있었다. 양쪽 참호에서 곧 누군가 이 회담을 눈치챌 것이다.\n 재의 기사가 손을 내밀었다. \"선택은 네 몫이야, 영웅 나리. 우리는 만들어진 물건이지만 — 물건도 가끔은 제 쓸 곳을 스스로 고르거든.\"\n 그의 손을 잡을 것인가, 창을 들 것인가, 아니면 아무것도 하지 않을 것인가.",
+   "ending": false,
+   "choices": [
+    {
+     "t": "그의 손을 잡는다 — 전쟁을 멈출 밀약",
+     "check": "",
+     "s": "w3_end_pact",
+     "f": "w3_end_pact",
+     "sd": {
+      "distset": -1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "pact_ash",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    },
+    {
+     "t": "창을 든다 — 영웅답게, 여기서 끝낸다",
+     "check": "str",
+     "s": "w3_duel_win",
+     "f": "w3_duel_lose",
+     "sd": {
+      "distset": -1,
+      "str": 1
+     },
+     "fd": {
+      "distset": -1,
+      "hp": -6
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": "수비대 지급 장창:15;아버지의 낡은 대장 망치:10;이 빠진 연습용 검:8"
+    },
+    {
+     "t": "아무것도 하지 않는다 — 오늘은 돌아가 때를 기다린다",
+     "check": "",
+     "s": "w3_end_wait",
+     "f": "w3_end_wait",
+     "sd": {
+      "distset": -1,
+      "int": 1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    }
+   ],
+   "img": "w3_crossroad.png",
+   "imgprompt": "two warriors at a decisive moment in no mans land, one offering a handshake, distant war machines, fateful grey dawn"
+  },
+  {
+   "id": "w3_duel_win",
+   "text": "창과 검이 몇 합을 부딪쳤다. 그는 강했지만, 오늘의 당신이 반 뼘 더 빨랐다.\n 그의 목에 칼을 겨눈 순간 — 두 진영에서 동시에 함성이 터졌다. 양쪽 다, 제 영웅이 이기기를 바라며.\n 당신은 칼을 거두었다. 그를 죽이는 건 저 함성에게 먹이를 주는 일이었다. \"…오늘은 무승부다.\" 그가 피 섞인 웃음을 지었다. \"현명하군, 영웅 나리.\"",
+   "ending": false,
+   "choices": [
+    {
+     "t": "그를 일으켜 세우고 각자의 참호로 돌아간다",
+     "check": "",
+     "s": "w3_end_wait",
+     "f": "w3_end_wait",
+     "sd": {
+      "distset": -1,
+      "str": 1,
+      "luck": 1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "spared_ash",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    }
+   ],
+   "img": "w3_duel_win.png",
+   "imgprompt": "two heroes dueling in no mans land, one lowering his blade at the decisive moment refusing to kill, mud and fog, hollow victory"
+  },
+  {
+   "id": "w3_duel_lose",
+   "text": "그의 창끝이 당신의 방패를 걷어내고 어깨를 찍었다. 당신은 진창에 무릎을 꿇었다.\n 그러나 그는 마지막 일격 대신, 창을 거두고 손을 내밀었다. \"죽이면 저들이 이겨. 살려 두면 — 우리가 이기는 거고.\"\n 굴욕과 안도가 뒤섞인 채, 당신은 그 손을 잡았다.",
+   "ending": false,
+   "choices": [
+    {
+     "t": "상처를 안고 참호로 돌아간다",
+     "check": "",
+     "s": "w3_end_wait",
+     "f": "w3_end_wait",
+     "sd": {
+      "distset": -1,
+      "int": 1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "spared_by_ash",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    }
+   ],
+   "img": "w3_duel_lose.png",
+   "imgprompt": "protagonist knocked into the mud in a duel, ash knight standing over him offering a hand up instead of finishing, grey battlefield"
+  },
+  {
+   "id": "w3_end_pact",
+   "text": "두 영웅이, 두 진영 몰래 손을 맞잡았다.\n \"다음 큰 전투에서, 우리 둘이 동시에 멈춰 서는 거야. 영웅이 싸우지 않으면 병사도 싸울 이유를 잃지. 상단의 장부에 처음으로 손해가 찍히게 하자.\"\n 위험한 밀약이었다. 발각되면 양쪽 모두에게 배신자다. 하지만 처음으로 — 당신은 남이 써 준 대본이 아니라, 당신이 고른 길 위에 서 있었다.\n\n — 3장 「거울 전선」 끝. 4장 「나의 전쟁」 준비 중 —",
    "ending": true,
    "choices": [
     {
@@ -2489,11 +3400,44 @@ window.STORY_DATA = {
      "setflag": "",
      "reqflag": "",
      "additem": "",
-     "lead": ""
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
     }
    ],
-   "img": "w2_orders.png",
-   "imgprompt": "dawn light on a desk with sealed marching orders, window facing the eastern horizon, armor stand with a rough scarf draped over it"
+   "img": "w3_end_pact.png",
+   "imgprompt": "two enemy heroes clasping hands in secret across no mans land at dawn, a fragile dangerous alliance, first light breaking through ash clouds"
+  },
+  {
+   "id": "w3_end_wait",
+   "text": "당신은 각자의 참호로 돌아갔다. 겉으로는 아무 일도 없었다. 무용담은 계속 불릴 것이고, 초상화는 계속 걸릴 것이다.\n 하지만 당신의 안에서 무언가가 바뀌었다. 이제 당신은 이 전쟁이 무엇을 위한 것인지 알고, 무인지대 저편에 당신과 같은 사람이 있다는 것을 안다.\n 아직은 때가 아니다. 그러나 때는 온다 — 당신이 고를 때가.\n\n — 3장 「거울 전선」 끝. 4장 「나의 전쟁」 준비 중 —",
+   "ending": true,
+   "choices": [
+    {
+     "t": "다른 삶으로 다시 시작한다",
+     "check": "",
+     "s": "cc_parent",
+     "f": "cc_parent",
+     "sd": {
+      "distset": -1
+     },
+     "fd": {
+      "distset": -1
+     },
+     "cost": 0,
+     "mcost": 0,
+     "setreason": "",
+     "reqreason": "",
+     "setflag": "",
+     "reqflag": "",
+     "additem": "",
+     "lead": "",
+     "reqitem": "",
+     "usebonus": ""
+    }
+   ],
+   "img": "w3_end_wait.png",
+   "imgprompt": "lone hero returning to his trench at dusk looking back at the enemy line, a secret understanding carried quietly, brooding grey sky"
   }
  ]
 };

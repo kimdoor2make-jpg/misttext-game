@@ -327,8 +327,21 @@ function newGame() {
   rollText = '';
 }
 
-function chance(stat) {
-  return Math.min(95, Math.max(5, 30 + P[stat] * 2.2));
+function chance(stat, bonus) {
+  return Math.min(95, Math.max(5, 30 + P[stat] * 2.2 + (bonus || 0)));
+}
+
+/* 장비 판정 보너스: usebonus "아이템명:15;다른아이템:10" — 소지한 것만 합산 */
+function usebonusOf(c) {
+  if (!c.usebonus) return 0;
+  let total = 0;
+  c.usebonus.split(';').forEach(spec => {
+    const idx = spec.lastIndexOf(':');
+    if (idx < 0) return;
+    const name = spec.slice(0, idx).trim();
+    if (name && P.items.includes(name)) total += parseInt(spec.slice(idx + 1)) || 0;
+  });
+  return total;
 }
 
 function applyDelta(d) {
@@ -359,9 +372,11 @@ function pick(c) {
     applyDelta(c.sd);
     next = c.s;
   } else {
-    const p = chance(c.check);
+    const bonus = usebonusOf(c);
+    const p = chance(c.check, bonus);
     const ok = Math.random() * 100 < p;
-    rollText = (ok ? '판정 성공' : '판정 실패') + `  (${STAT_NAME[c.check]} ${p.toFixed(1)}%)`;
+    const tag = bonus > 0 ? ' · 장비' : '';
+    rollText = (ok ? '판정 성공' : '판정 실패') + `  (${STAT_NAME[c.check]} ${p.toFixed(1)}%${tag})`;
     applyDelta(ok ? c.sd : c.fd);
     next = ok ? c.s : c.f;
   }
@@ -442,7 +457,9 @@ function render() {
   box.innerHTML = '';
   box.classList.add('hidden');
   const visible = node.choices.filter(c =>
-    (!c.reqreason || c.reqreason === P.reason) && (!c.reqflag || P.flags.includes(c.reqflag)));
+    (!c.reqreason || c.reqreason === P.reason) &&
+    (!c.reqflag || P.flags.includes(c.reqflag)) &&
+    (!c.reqitem || c.reqitem.split(',').some(it => P.items.includes(it.trim()))));
   visible.forEach((c, i) => {
     const btn = document.createElement('div');
     btn.className = 'choice';
@@ -450,9 +467,12 @@ function render() {
     const afford = (!c.cost || P.gold >= c.cost) && (!c.mcost || P.mp >= c.mcost);
     if (!afford) btn.classList.add('disabled');
     const destiny = c.reqreason ? '<span style="color:var(--gold);font-weight:bold">[운명] </span>' : '';
-    let inner = `<div class="mark"></div><div><div class="title">${destiny}${c.t}</div>`;
+    const gear = c.reqitem ? '<span style="color:var(--blue);font-weight:bold">[장비] </span>' : '';
+    let inner = `<div class="mark"></div><div><div class="title">${destiny}${gear}${c.t}</div>`;
     if (c.check) {
-      inner += `<div class="prob"><span class="stat" style="color:${STAT_COLOR[c.check]}">${STAT_NAME[c.check]}</span><span class="prob-val">성공확률 : ${chance(c.check).toFixed(1)} %</span></div>`;
+      const bonus = usebonusOf(c);
+      const bonusTag = bonus > 0 ? ` <span style="color:var(--green)">(장비 +${bonus}%)</span>` : '';
+      inner += `<div class="prob"><span class="stat" style="color:${STAT_COLOR[c.check]}">${STAT_NAME[c.check]}</span><span class="prob-val">성공확률 : ${chance(c.check, bonus).toFixed(1)} %</span>${bonusTag}</div>`;
     }
     inner += '</div>';
     btn.innerHTML = inner;
