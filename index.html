@@ -188,6 +188,24 @@
   }
   #toast.show { opacity: 1; }
 
+  /* ---------- 능력치 상승 +N 배지 ---------- */
+  .gain-badge {
+    position: fixed; z-index: 30;
+    transform: translate(-50%, 0);
+    color: #fff; background: var(--green);
+    font-size: 14px; font-weight: bold;
+    padding: 1px 8px; border-radius: 3px;
+    pointer-events: none; white-space: nowrap;
+    box-shadow: 0 1px 4px rgba(0,0,0,.35);
+    opacity: 1;
+    transition: transform 2.8s cubic-bezier(.2,.7,.3,1), opacity 2.8s ease-in;
+  }
+  .gain-badge.rise { transform: translate(-50%, -34px); opacity: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    .gain-badge { transition: opacity 2.8s ease-in; }
+    .gain-badge.rise { transform: translate(-50%, 0); opacity: 0; }
+  }
+
   /* ---------- 가방 ---------- */
   #bag-overlay {
     position: fixed; inset: 0;
@@ -304,7 +322,7 @@ const STAT_COLOR = { str: 'var(--red)', mag: 'var(--blue)', int: 'var(--purple)'
 let P, nodeId, rollText = '', armedIdx = -1, typeTimer = null;
 
 function newGame() {
-  P = { str: 5, mag: 5, int: 5, agi: 5, luck: 5, tal: 5, gold: 6, hp: 12, maxHp: 12, mp: 6, maxMp: 6, dist: 50, reason: '', flags: [], items: [] };
+  P = { str: 5, mag: 5, int: 5, agi: 5, luck: 5, tal: 5, gold: 6, hp: 12, maxHp: 12, mp: 6, maxMp: 6, dist: 50, reason: '', flags: [], items: [], lead: '' };
   nodeId = 'cc_parent'; // 인생 선택(부모→청소년기→성인기→집을 나온 이유)부터 시작
   rollText = '';
 }
@@ -325,6 +343,8 @@ function applyDelta(d) {
   if (d.distset !== undefined && d.distset >= 0) P.dist = d.distset;
 }
 
+const GAIN_KEYS = ['str', 'mag', 'int', 'agi', 'luck', 'tal', 'gold', 'maxHp', 'hp', 'maxMp', 'mp'];
+
 function pick(c) {
   if (c.cost && P.gold < c.cost) return;
   if (c.mcost && P.mp < c.mcost) return;
@@ -332,6 +352,7 @@ function pick(c) {
   if (c.setreason) P.reason = c.setreason; // 집을 나온 이유 = 운명 태그
   if (c.setflag) c.setflag.split(',').forEach(f => { f = f.trim(); if (f && !P.flags.includes(f)) P.flags.push(f); }); // 선택 기억
   if (c.additem) c.additem.split(',').forEach(it => { it = it.trim(); if (it) P.items.push(it); }); // 장비 획득
+  const before = {}; GAIN_KEYS.forEach(k => before[k] = P[k]); // 능력치 증가 표시용 스냅샷
   let next;
   if (!c.check) {
     rollText = '';
@@ -344,11 +365,41 @@ function pick(c) {
     applyDelta(ok ? c.sd : c.fd);
     next = ok ? c.s : c.f;
   }
+  P.lead = c.lead || ''; // 다음 화면 도입부에 붙는 연결 서술
   if (P.hp <= 0) { next = 'forgotten'; rollText = '당신은 쓰러졌다…'; }
-  if (next === 'cc_parent') { newGame(); } // 재시작 = 새 인생 선택부터
+  if (next === 'cc_parent') { const keepLead = P.lead; newGame(); P.lead = keepLead; } // 재시작 = 새 인생 선택부터
   else nodeId = next;
   saveGame();
   render();
+  showGains(before); // 능력치 상승 +N 배지 (render 후, 헤더 갱신된 상태에서)
+}
+
+/* 능력치 상승 시 해당 칸 위로 +N 배지가 떠오르며 3초간 표시 */
+function showGains(before) {
+  const cells = [
+    ['str', 'v-str'], ['mag', 'v-mag'], ['int', 'v-int'],
+    ['agi', 'v-agi'], ['luck', 'v-luck'], ['tal', 'v-tal'], ['gold', 'v-gold']
+  ];
+  cells.forEach(([k, id]) => {
+    const d = P[k] - before[k];
+    if (d > 0) floatGain($(id).parentElement, '+' + d);
+  });
+  const dHp = P.maxHp - before.maxHp || P.hp - before.hp;
+  if (dHp > 0) floatGain($('hp-num'), '+' + dHp);
+  const dMp = P.maxMp - before.maxMp || P.mp - before.mp;
+  if (dMp > 0) floatGain($('mp-num'), '+' + dMp);
+}
+
+function floatGain(anchor, text) {
+  const r = anchor.getBoundingClientRect();
+  const b = document.createElement('div');
+  b.className = 'gain-badge';
+  b.textContent = text;
+  b.style.left = (r.right - 4) + 'px';
+  b.style.top = (r.top - 2) + 'px';
+  document.body.appendChild(b);
+  requestAnimationFrame(() => b.classList.add('rise'));
+  setTimeout(() => b.remove(), 3000);
 }
 
 /* ================= 렌더 ================= */
@@ -417,7 +468,9 @@ function render() {
     box.appendChild(btn);
   });
 
-  typewrite(node.text);
+  // 직전 선택의 연결 서술(lead)을 이번 화면 도입부로 이어 붙임
+  const body = (P.lead ? P.lead + '\n\n' : '') + node.text;
+  typewrite(body);
 }
 
 /* 타자기 효과 — 본문 탭하면 즉시 완성 */

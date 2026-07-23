@@ -26,7 +26,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "아버지의 낡은 대장 망치"
+     "additem": "아버지의 낡은 대장 망치",
+     "lead": "대장간의 열기와 쇠 두드리는 소리가 당신의 자장가였다. 남들보다 이른 나이에 팔뚝에 근육이 앉았다."
     },
     {
      "t": "궁정 마법사의 탑지기",
@@ -48,7 +49,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "마력 잔재가 밴 지팡이 조각"
+     "additem": "마력 잔재가 밴 지팡이 조각",
+     "lead": "탑 꼭대기의 밤은 별보다 마법 불빛이 더 밝았다. 당신은 옹알이보다 먼저 주문의 억양을 흉내 냈다."
     },
     {
      "t": "수도원의 필사 학자",
@@ -70,7 +72,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "여백까지 주석이 빼곡한 고서"
+     "additem": "여백까지 주석이 빼곡한 고서",
+     "lead": "수도원의 양피지 냄새 속에서 자랐다. 당신에게 글자는 그림이자 유일한 친구였다."
     },
     {
      "t": "숲가의 사냥꾼",
@@ -91,7 +94,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "잘 손질된 사냥칼"
+     "additem": "잘 손질된 사냥칼",
+     "lead": "숲의 소리를 읽는 법을 걷기보다 먼저 배웠다. 당신의 발은 마른 가지 하나 밟지 않았다."
     },
     {
      "t": "떠도는 유랑 악단",
@@ -113,7 +117,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "칠이 벗겨진 낡은 류트"
+     "additem": "칠이 벗겨진 낡은 류트",
+     "lead": "수레 위에서 잠들고 낯선 마을에서 눈을 떴다. 박수와 야유를 함께 들으며 자랐다."
     }
    ],
    "img": "cc_parent.png",
@@ -122,7 +127,7 @@ window.STORY_DATA = {
   {
    "id": "cc_youth",
    "ending": false,
-   "text": "화롯불이 낮아질 무렵, 어린 시절은 끝났다.\n 열다섯의 당신은 하루의 대부분을 무엇에 쏟았는가?",
+   "text": "그렇게 유년이 지나갔다.\n 열다섯이 된 당신은, 하루의 대부분을 무엇에 쏟으며 보냈는가?",
    "choices": [
     {
      "t": "울타리 밖에서의 검술 수련",
@@ -143,7 +148,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "이 빠진 연습용 검"
+     "additem": "이 빠진 연습용 검",
+     "lead": "울타리 밖 공터에 흘린 땀만큼, 당신의 팔은 단단해지고 검은 손에 익었다."
     },
     {
      "t": "낡은 주문서를 몰래 베껴 쓰기",
@@ -164,7 +170,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "반쯤 그을린 주문 필사본"
+     "additem": "반쯤 그을린 주문 필사본",
+     "lead": "촛불 아래 몰래 베낀 문양들이 손끝에 새겨졌다. 마력이 당신의 말을 알아듣기 시작했다."
     },
     {
      "t": "도서관의 고서 탐독",
@@ -186,7 +193,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "여러 번 접힌 낡은 지도"
+     "additem": "여러 번 접힌 낡은 지도",
+     "lead": "먼지 쌓인 책장 사이에서, 당신은 세상을 책으로 먼저 여행했다."
     },
     {
      "t": "뒷골목 심부름과 지붕 타기",
@@ -207,7 +215,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "소매치기용 가는 단검"
+     "additem": "소매치기용 가는 단검",
+     "lead": "골목의 그늘과 지붕의 경사가 당신의 놀이터였다. 아무도 당신이 지나간 것을 눈치채지 못했다."
     },
     {
      "t": "축제 무대에서 노래하기",
@@ -229,7 +238,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "관객이 던져 준 은화 주머니"
+     "additem": "관객이 던져 준 은화 주머니",
+     "lead": "무대의 떨림과 관객의 눈빛에 중독됐다. 당신의 목소리는 사람을 붙드는 법을 익혔다."
     }
    ],
    "img": "cc_youth.png",
@@ -238,7 +248,7 @@ window.STORY_DATA = {
   {
    "id": "cc_adult",
    "ending": false,
-   "text": "손에 굳은살이 앉고, 어깨가 단단해졌다.\n 어른이 된 당신은 무엇으로 빵을 벌었는가?",
+   "text": "그 시절이 당신을 빚어 놓았다.\n 어른이 된 당신은, 무엇으로 하루의 빵을 벌었는가?",
    "choices": [
     {
      "t": "국경 수비대의 용병",
@@ -260,7 +270,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "수비대 지급 장창"
+     "additem": "수비대 지급 장창",
+     "lead": "국경의 진창에서 창을 쥐고 밥을 벌었다. 살아남는 법과, 살아남지 못하는 이들을 지켜보는 법을 배웠다."
     },
     {
      "t": "탑의 견습 마법사",
@@ -282,7 +293,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "견습 인장이 박힌 로브"
+     "additem": "견습 인장이 박힌 로브",
+     "lead": "탑의 서열 맨 아래에서 잔심부름과 주문을 함께 익혔다. 로브 자락엔 늘 잉크와 재가 묻어 있었다."
     },
     {
      "t": "영주청의 필경사",
@@ -303,7 +315,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "봉랍과 인장 세트"
+     "additem": "봉랍과 인장 세트",
+     "lead": "영주청의 차가운 책상에서 남의 운명을 대신 받아 적었다. 잉크 밑에 감춰진 것을 읽는 눈이 생겼다."
     },
     {
      "t": "주사위를 굴리는 도박꾼",
@@ -324,7 +337,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "무게가 묘하게 치우친 주사위 한 쌍"
+     "additem": "무게가 묘하게 치우친 주사위 한 쌍",
+     "lead": "주사위와 함께 뜨고 지는 나날이었다. 운을 믿지 않으면서도, 운으로 먹고살았다."
     },
     {
      "t": "선술집의 음유시인",
@@ -345,7 +359,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "잘 길든 여행용 류트"
+     "additem": "잘 길든 여행용 류트",
+     "lead": "선술집마다 당신의 노래가 남았다. 사람들이 어떤 이야기를 사랑하는지 당신은 누구보다 잘 알았다."
     }
    ],
    "img": "cc_adult.png",
@@ -354,7 +369,7 @@ window.STORY_DATA = {
   {
    "id": "cc_reason",
    "ending": false,
-   "text": "그리고 어느 밤, 당신은 등불을 끄고 조용히 집 문을 닫았다.\n 무엇이 당신을 길 위로 이끌었는가?\n — 이 선택부터, 운명은 온전히 당신의 것이다.",
+   "text": "그렇게 당신은 어른이 되었다. 그리고 어느 밤, 등불을 끄고 조용히 문고리를 잡았다.\n 무엇이 당신을 길 위로 이끌었는가?\n — 이 선택부터, 운명은 온전히 당신의 것이다.",
    "choices": [
     {
      "t": "가족을 해친 자에 대한 복수",
@@ -375,7 +390,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "원수의 인상착의를 적은 쪽지"
+     "additem": "원수의 인상착의를 적은 쪽지",
+     "lead": "가슴에서 지운 적 없는 이름 하나를 품고, 당신은 문을 닫았다."
     },
     {
      "t": "금지된 마법서가 부르는 소리",
@@ -396,7 +412,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "찢겨 나온 마법서 한 장"
+     "additem": "찢겨 나온 마법서 한 장",
+     "lead": "당신을 부르는 책의 속삭임을 따라, 익숙한 화롯가를 등졌다."
     },
     {
      "t": "세상의 진실을 향한 갈증",
@@ -417,7 +434,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "봉인된 밀서"
+     "additem": "봉인된 밀서",
+     "lead": "누구도 말해 주지 않는 것을 알고 싶어서, 당신은 길 위에 섰다."
     },
     {
      "t": "내 이름 위에 붙은 수배령",
@@ -439,7 +457,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "위조한 통행증"
+     "additem": "위조한 통행증",
+     "lead": "이름이 수배지에 오른 그 밤, 당신은 이름을 두고 떠나기로 했다."
     },
     {
      "t": "더 큰 무대를 향한 꿈",
@@ -460,7 +479,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": "첫 무대의 빛바랜 초대장"
+     "additem": "첫 무대의 빛바랜 초대장",
+     "lead": "이 좁은 마을이 담기엔 당신의 꿈이 너무 컸다. 더 큰 무대가 어딘가에서 기다리고 있었다."
     }
    ],
    "img": "cc_reason.png",
@@ -488,7 +508,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "forgotten.png",
@@ -518,7 +539,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "갈 길이 멀다. 행렬을 앞질러 걷는다",
@@ -538,7 +560,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "병사들의 검문을 피해 행렬 한가운데로 숨어든다",
@@ -558,7 +581,8 @@ window.STORY_DATA = {
      "reqreason": "wanted",
      "setflag": "hid_in_crowd",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_road.png",
@@ -587,7 +611,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "told_name",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "\"지나가던 사람입니다.\" — 이름 없이 떠난다",
@@ -607,7 +632,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "stayed_nameless",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_help.png",
@@ -636,7 +662,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_help_fail.png",
@@ -665,7 +692,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_hide.png",
@@ -694,7 +722,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "서명 대신 짐꾼 일을 구한다 — 전쟁의 가장자리에 남는다",
@@ -714,7 +743,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "no_sign",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "명부에서 그자의 부대를 찾는다",
@@ -733,7 +763,8 @@ window.STORY_DATA = {
      "reqreason": "revenge",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_camp.png",
@@ -762,7 +793,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "revenge_lead",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_revenge.png",
@@ -792,7 +824,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_porter.png",
@@ -823,7 +856,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "role_blade",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "전장 술사 보조 — 부적과 결계 나르기",
@@ -845,7 +879,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "role_ward",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "정찰조 — 잿날의 안개 속을 걷는 눈",
@@ -867,7 +902,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "role_scout",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "종군 서기 — 명령서와 전사자 명단을 쓰는 손",
@@ -888,7 +924,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "role_scribe",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_role.png",
@@ -916,7 +953,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "answered_true",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "\"영웅이 되러 왔지.\" — 사람들이 좋아할 대답을 한다",
@@ -935,7 +973,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "answered_hero",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "대답 대신 불씨만 바라본다",
@@ -954,7 +993,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "answered_silence",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_night.png",
@@ -984,7 +1024,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "연기와 어둠을 틈타 적의 측면으로 돌아간다",
@@ -1005,7 +1046,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "무너지는 결계석에 손을 얹고 마력을 쏟아붓는다 (마력 3)",
@@ -1026,7 +1068,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_alarm.png",
@@ -1054,7 +1097,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_stand.png",
@@ -1082,7 +1126,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_flank.png",
@@ -1110,7 +1155,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_wardhold.png",
@@ -1138,7 +1184,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_hurt.png",
@@ -1166,7 +1213,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "saved_soldier",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "언덕으로 달려가 군기를 지킨다",
@@ -1185,7 +1233,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "saved_banner",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_choice.png",
@@ -1215,7 +1264,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_save.png",
@@ -1245,7 +1295,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_banner.png",
@@ -1274,7 +1325,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_feat.png",
@@ -1303,7 +1355,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_feat_luck.png",
@@ -1331,7 +1384,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "ride_proud",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "마차에 오르며, 부풀려진 이야기를 한 번 정정해 본다",
@@ -1350,7 +1404,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "ride_honest",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_after.png",
@@ -1378,7 +1433,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w1_end.png",
@@ -1407,7 +1463,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "\"그 이야기, 절반은 사실이 아니오.\" — 한 번 더 정정을 시도한다",
@@ -1427,7 +1484,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "honest_twice",
      "reqflag": "ride_honest",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_intro.png",
@@ -1456,7 +1514,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_honest.png",
@@ -1485,7 +1544,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "portrait_fake",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "\"닮게 고쳐 주시오.\" — 화가와 마주 앉는다",
@@ -1504,7 +1564,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "portrait_true",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_portrait.png",
@@ -1534,7 +1595,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_portrait_fix.png",
@@ -1563,7 +1625,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "cheered_lie",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "노래에 없는 것 — 그날 망루 아래의 비명을 기억한다",
@@ -1582,7 +1645,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "saved_soldier",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "깃발 장면만은 진짜다. 그런데 왜 이토록 낯선가",
@@ -1601,7 +1665,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "saved_banner",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "시인의 류트를 빌려, 내 입으로 그날 밤을 부른다",
@@ -1621,7 +1686,8 @@ window.STORY_DATA = {
      "reqreason": "stage",
      "setflag": "took_stage",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_recital.png",
@@ -1651,7 +1717,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "bard_verse",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_rec_soldier.png",
@@ -1681,7 +1748,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_rec_banner.png",
@@ -1710,7 +1778,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "sang_truth",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_stage_true.png",
@@ -1739,7 +1808,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_stage_flop.png",
@@ -1767,7 +1837,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "faction_noble",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "야전 지휘관들의 회의로 간다",
@@ -1786,7 +1857,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "faction_field",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "병사들의 술자리로 간다",
@@ -1805,7 +1877,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "faction_people",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_faction.png",
@@ -1835,7 +1908,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_noble.png",
@@ -1866,7 +1940,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_field.png",
@@ -1897,7 +1972,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_people.png",
@@ -1927,7 +2003,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "부적 공정을 조용히 눈에 담아 둔다",
@@ -1948,7 +2025,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "사슬 서고 안쪽 — 낯익은 장정(裝幀)이 보인다 (마력 3)",
@@ -1967,7 +2045,8 @@ window.STORY_DATA = {
      "reqreason": "grimoire",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_armory.png",
@@ -1996,7 +2075,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_spear_ok.png",
@@ -2025,7 +2105,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_spear_fail.png",
@@ -2055,7 +2136,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "grimoire_page",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_grim.png",
@@ -2083,7 +2165,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "speech_script",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "대본을 접고, 내 말로 이야기한다",
@@ -2103,7 +2186,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "speech_own_try",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "대본에서 거짓말 한 줄만 조용히 빼고 읽는다",
@@ -2122,7 +2206,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "speech_edit",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_speech.png",
@@ -2151,7 +2236,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_script.png",
@@ -2181,7 +2267,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_script_edit.png",
@@ -2210,7 +2297,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "speech_own",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_ownwords.png",
@@ -2239,7 +2327,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "speech_stumble",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_stumble.png",
@@ -2268,7 +2357,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "문 두드리는 소리 — 낯익은 앳된 얼굴이 서 있다",
@@ -2287,7 +2377,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "saved_soldier",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     },
     {
      "t": "소포가 하나 와 있다 — 진창의 그 노파에게서",
@@ -2306,7 +2397,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "told_name",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_night.png",
@@ -2336,7 +2428,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "squire",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_boy.png",
@@ -2366,7 +2459,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "scarf",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_letter.png",
@@ -2394,7 +2488,8 @@ window.STORY_DATA = {
      "reqreason": "",
      "setflag": "",
      "reqflag": "",
-     "additem": ""
+     "additem": "",
+     "lead": ""
     }
    ],
    "img": "w2_orders.png",
