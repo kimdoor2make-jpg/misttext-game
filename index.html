@@ -188,6 +188,40 @@
   }
   #toast.show { opacity: 1; }
 
+  /* ---------- 가방 ---------- */
+  #bag-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.55);
+    display: none; align-items: center; justify-content: center;
+    padding: 24px; z-index: 20;
+  }
+  #bag-overlay.show { display: flex; }
+  #bag-panel {
+    width: 100%; max-width: 460px; max-height: 80vh;
+    background: var(--bg); border: 3px solid var(--frame);
+    display: flex; flex-direction: column;
+  }
+  #bag-head {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 16px; background: var(--panel-dark);
+    border-bottom: 2px solid var(--frame);
+    font-size: 20px; font-weight: bold;
+  }
+  #bag-close {
+    font-family: inherit; font-size: 14px; cursor: pointer;
+    padding: 5px 14px; background: var(--panel);
+    border: 1px solid var(--frame); color: var(--ink);
+  }
+  #bag-list { padding: 8px 0; overflow-y: auto; }
+  .bag-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 18px;
+    border-bottom: 1px dotted var(--panel-dark);
+    font-size: 16px;
+  }
+  .bag-item .gem { width: 16px; height: 16px; background: var(--ornament); transform: rotate(45deg); flex-shrink: 0; }
+  .bag-empty { padding: 28px 18px; text-align: center; color: var(--ink-soft); }
+
   button:focus-visible { outline: 3px solid var(--blue); }
   @media (prefers-reduced-motion: reduce) {
     #progress-fill { transition: none; }
@@ -234,10 +268,17 @@
     <button class="big-icon" data-toast="기록서 — 준비 중">기록서</button>
     <button class="big-icon" data-toast="상흔(각성) — 준비 중">상흔</button>
     <button class="big-icon" data-toast="업적 — 준비 중">업적</button>
-    <button class="big-icon" data-toast="가방 — 준비 중">가방</button>
+    <button class="big-icon" id="btn-bag">가방</button>
   </footer>
 </div>
 <div id="toast"></div>
+
+<div id="bag-overlay">
+  <div id="bag-panel">
+    <div id="bag-head"><span>가방</span><button id="bag-close">닫기</button></div>
+    <div id="bag-list"></div>
+  </div>
+</div>
 
 <script src="story.js"></script>
 <script>
@@ -263,7 +304,7 @@ const STAT_COLOR = { str: 'var(--red)', mag: 'var(--blue)', int: 'var(--purple)'
 let P, nodeId, rollText = '', armedIdx = -1, typeTimer = null;
 
 function newGame() {
-  P = { str: 5, mag: 5, int: 5, agi: 5, luck: 5, tal: 5, gold: 6, hp: 12, maxHp: 12, mp: 6, maxMp: 6, dist: 50, reason: '', flags: [] };
+  P = { str: 5, mag: 5, int: 5, agi: 5, luck: 5, tal: 5, gold: 6, hp: 12, maxHp: 12, mp: 6, maxMp: 6, dist: 50, reason: '', flags: [], items: [] };
   nodeId = 'cc_parent'; // 인생 선택(부모→청소년기→성인기→집을 나온 이유)부터 시작
   rollText = '';
 }
@@ -290,6 +331,7 @@ function pick(c) {
   if (c.mcost) P.mp -= c.mcost;
   if (c.setreason) P.reason = c.setreason; // 집을 나온 이유 = 운명 태그
   if (c.setflag) c.setflag.split(',').forEach(f => { f = f.trim(); if (f && !P.flags.includes(f)) P.flags.push(f); }); // 선택 기억
+  if (c.additem) c.additem.split(',').forEach(it => { it = it.trim(); if (it) P.items.push(it); }); // 장비 획득
   let next;
   if (!c.check) {
     rollText = '';
@@ -411,6 +453,21 @@ document.querySelectorAll('[data-toast]').forEach(b => {
   });
 });
 
+/* 가방 열기/닫기 + 소지품 렌더 */
+function openBag() {
+  const list = $('bag-list');
+  if (!P.items.length) {
+    list.innerHTML = '<div class="bag-empty">아직 가진 것이 없다.</div>';
+  } else {
+    list.innerHTML = P.items.map(it =>
+      `<div class="bag-item"><span class="gem"></span><span>${it}</span></div>`).join('');
+  }
+  $('bag-overlay').classList.add('show');
+}
+document.getElementById('btn-bag').addEventListener('click', openBag);
+document.getElementById('bag-close').addEventListener('click', () => $('bag-overlay').classList.remove('show'));
+document.getElementById('bag-overlay').addEventListener('click', e => { if (e.target.id === 'bag-overlay') $('bag-overlay').classList.remove('show'); });
+
 /* 자동저장 / 이어하기 */
 function saveGame() {
   try { localStorage.setItem('mist_save3', JSON.stringify({ P, nodeId })); } catch (e) {}
@@ -418,7 +475,7 @@ function saveGame() {
 function loadGame() {
   try {
     const s = JSON.parse(localStorage.getItem('mist_save3'));
-    if (s && s.P && Array.isArray(s.P.flags) && NODES[s.nodeId]) { P = s.P; nodeId = s.nodeId; return true; }
+    if (s && s.P && Array.isArray(s.P.flags) && NODES[s.nodeId]) { P = s.P; if (!Array.isArray(P.items)) P.items = []; nodeId = s.nodeId; return true; }
   } catch (e) {}
   return false;
 }

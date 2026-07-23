@@ -443,7 +443,7 @@ function cancelLink() {
 function finishLink(targetId) {
   const src = byId(linkSourceId);
   if (src && targetId !== linkSourceId) {
-    src.choices.push({ t: '새 선택지', check: '', s: targetId, f: targetId, sd: { distset: -1 }, fd: { distset: -1 }, cost: 0, mcost: 0, setreason: '', reqreason: '', setflag: '', reqflag: '' });
+    src.choices.push({ t: '새 선택지', check: '', s: targetId, f: targetId, sd: { distset: -1 }, fd: { distset: -1 }, cost: 0, mcost: 0, setreason: '', reqreason: '', setflag: '', reqflag: '', additem: '' });
     selectedId = src.id;
     markDirty();
     renderInspector();
@@ -522,7 +522,7 @@ function renderInspector() {
   add.className = 'add-btn';
   add.textContent = '+ 선택지 추가';
   add.addEventListener('click', () => {
-    n.choices.push({ t: '새 선택지', check: '', s: 'intro', f: 'intro', sd: { distset: -1 }, fd: { distset: -1 }, cost: 0, mcost: 0, setreason: '', reqreason: '' });
+    n.choices.push({ t: '새 선택지', check: '', s: 'intro', f: 'intro', sd: { distset: -1 }, fd: { distset: -1 }, cost: 0, mcost: 0, setreason: '', reqreason: '', setflag: '', reqflag: '', additem: '' });
     markDirty();
     renderInspector();
   });
@@ -664,6 +664,14 @@ function choiceEditor(n, c, i) {
   mkFlag(sfCol, '플래그 부여 (쉼표로 여러 개)', 'setflag', '예: saved_soldier');
   mkFlag(rfCol, '플래그 조건 (있을 때만 표시)', 'reqflag', '예: role_scout');
   wrap.appendChild(flagRow);
+
+  // 장비 획득 — 선택 시 가방에 담기는 아이템
+  wrap.insertAdjacentHTML('beforeend', '<label>장비 획득 (쉼표로 여러 개, 가방에 담김)</label>');
+  const itemInp = document.createElement('input');
+  itemInp.value = c.additem || '';
+  itemInp.placeholder = '예: 아버지의 낡은 대장 망치';
+  itemInp.addEventListener('input', () => { c.additem = itemInp.value; markDirty(); });
+  wrap.appendChild(itemInp);
 
   wrap.appendChild(deltaEditor(c.check ? '성공 시 변화' : '변화량', c, 'sd'));
   if (c.check) wrap.appendChild(deltaEditor('실패 시 변화', c, 'fd'));
